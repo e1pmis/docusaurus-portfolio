@@ -1,0 +1,130 @@
+.hero {
+  background: #266AD9;
+  color: #fff;
+  padding: 0 6vw;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr minmax(280px, 441.62px);
+  column-gap: clamp(40px, 8vw, 115px);
+  padding-top: clamp(40px, 5vw, 60px);
+  padding-bottom: clamp(48px, 6vw, 72px);
+}
+
+/* left text column */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(16px, 3vw, 40px);
+  max-width: 664px;
+}
+
+.kicker {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 120%;
+}
+
+.name {
+  margin: 0;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 120%;
+}
+
+.role {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 120%;
+}
+
+.blurb {
+  margin: 0;
+  max-width: 664px;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 120%;
+}
+
+/* CTA button */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 14px 20px;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #266AD9;
+  text-decoration: none;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 120%;
+}
+
+/* right picture (desktop) */
+.picCol {
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  width: clamp(280px, 30vw, 441.62px);
+  height: clamp(300px, 32vw, 479px);
+  object-fit: cover;
+  border-radius: 30px;
+  transform: scaleX(-1);
+}
+
+/* visibility helpers */
+.picMobile {
+  display: none;
+}
+
+/* hidden on desktop */
+.picDesktop {
+  display: flex;
+}
+
+/* shown on desktop */
+
+/* collapse to single column + center on smaller widths */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    justify-items: center;
+    /* center grid children */
+  }
+
+  .textCol {
+    align-items: left;
+    /* center texts */
+    text-align: left;
+  }
+
+  .cta {
+    margin-inline: auto;
+  }
+
+  /* center button */
+
+  .picDesktop {
+    display: none;
+  }
+
+  /* hide right pic on mobile */
+  .picMobile {
+    display: flex;
+    /* show mobile pic under role */
+    justify-content: center;
+  }
+}
