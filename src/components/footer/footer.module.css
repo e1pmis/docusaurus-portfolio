@@ -1,0 +1,48 @@
+.footer {
+  background-color: #111827;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.backToTop {
+  place-items: center;
+  line-height: 0;
+  padding-bottom: 2rem;
+}
+
+.copy {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.legal {
+  font-size: 0.85rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding-bottom: 10vw;
+}
+
+.legal:hover {
+  text-decoration: underline;
+}
+
+
+.iconHover {
+  display: none;
+}
+
+.backToTop:hover .icon {
+  display: none;
+}
+
+.backToTop:hover .iconHover {
+  display: block;
+}
