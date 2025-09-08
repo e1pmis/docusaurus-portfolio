@@ -1,0 +1,297 @@
+/* SECTION */
+.section {
+  background: #266AD9;
+  color: #fff;
+  padding: 0 6vw;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 0;
+  gap: 64px;
+}
+
+/* TITLE */
+.title {
+  width: 100%;
+  margin: 0;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 120%;
+  text-align: left;
+}
+
+/* CONTENT ROW */
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  min-width: 0;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* LEFT: NUMBERED LIST */
+.listCol {
+  flex: 0 0 clamp(200px, 22vw, 256px);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 29px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 120%;
+  text-align: left;
+}
+
+.num {
+  min-width: 28px;
+  text-align: right;
+  font-weight: 600;
+  color: #fff;
+  opacity: .9;
+}
+
+.itemLabel {
+  white-space: nowrap;
+}
+
+.itemActive {
+  font-weight: 600;
+  color: #000;
+  text-decoration: underline;
+}
+
+.numActive {
+  color: #000;
+  opacity: 1;
+}
+
+.seeMore {
+  width: 100%;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 0 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 120%;
+  text-decoration: underline;
+}
+
+.arrowBox {
+  width: 30px;
+  height: 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  width: 20px;
+  height: 19px;
+  display: block;
+}
+
+/* RIGHT: PROJECT CARD */
+.card {
+  flex: 1 1 0;
+  min-width: 0;
+ 
+  background: #2F4563;
+  border-radius: 30px;
+  padding: clamp(20px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.cardBody {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(240px, clamp(260px, 33%, 355px)) 1fr;
+  column-gap: clamp(24px, 8vw, 78px);
+  row-gap: 24px;
+}
+
+/* left: title + image */
+.leftCol {
+
+  gap: 16px;
+  min-width: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 2.2vw, 40px);
+  color: #fff;
+  padding-bottom: 22px;
+}
+
+.imageWrap {
+  width: 120%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  display: block;
+}
+
+/* right: tags + description + buttons aligned on same left edge */
+.detailCol {
+  min-width: 0;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 8px;
+}
+
+.tagIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+.tagText {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #262E34;
+}
+
+.description {
+  margin: 0;
+  color: #fff;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 125%;
+ 
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content:flex-end;
+  gap: 16px;
+  margin-top: 10px; 
+}
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 120%;
+  
+
+}
+
+.btnPrimary {
+  background: #266AD9;
+  color: #fff;
+  border: 0;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* BREAKPOINTS */
+@media (max-width:1000px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .listCol {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .itemLabel {
+    white-space: normal;
+  }
+
+  .cardBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:560px) {
+  .wrap {
+    padding: 48px 0;
+    gap: 32px;
+  }
+
+  .tags {
+    gap: 6px;
+  }
+
+  .tagIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
