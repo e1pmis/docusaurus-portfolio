@@ -11,16 +11,14 @@
   align-items: center;
   padding: 72px 0;
   gap: 64px;
+  /* padding-bottom: 0; */
 }
 
 /* TITLE */
 .title {
   width: 100%;
   margin: 0;
-  font-family: 'Quicksand', system-ui, sans-serif;
-  font-weight: 700;
-  font-size: clamp(36px, 5vw, 64px);
-  line-height: 120%;
+  font: 700 64px/100% 'Quicksand', system-ui, sans-serif;
   text-align: left;
 }
 
@@ -132,7 +130,7 @@
 .card {
   flex: 1 1 0;
   min-width: 0;
- 
+
   background: #2F4563;
   border-radius: 30px;
   padding: clamp(20px, 3vw, 32px);
@@ -222,16 +220,17 @@
   font-weight: 400;
   font-size: clamp(16px, 1.6vw, 20px);
   line-height: 125%;
- 
+
 }
 
 /* BUTTONS */
 .buttons {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   gap: 16px;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
+
 .btnPrimary,
 .btnSecondary {
   display: inline-flex;
@@ -244,7 +243,7 @@
   font-weight: 600;
   font-size: clamp(16px, 1.8vw, 20px);
   line-height: 120%;
-  
+
 
 }
 
@@ -260,38 +259,256 @@
   border: 1px solid #fff;
 }
 
-/* BREAKPOINTS */
-@media (max-width:1000px) {
-  .content {
-    flex-direction: column;
-  }
 
-  .listCol {
-    width: 100%;
-    flex: 0 0 auto;
-  }
-
-  .itemLabel {
-    white-space: normal;
-  }
-
-  .cardBody {
-    grid-template-columns: 1fr;
-  }
+/* Viewport switches */
+.desktopOnly {
+  display: block;
 }
 
-@media (max-width:560px) {
-  .wrap {
-    padding: 48px 0;
-    gap: 32px;
+.mobileOnly {
+  display: none;
+}
+
+
+
+/* ===== Mobile card overrides, reuse same class names ===== */
+@media (max-width:1000px) {
+
+  .visuallyHidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
+.wrap {
+  padding-bottom: 0;
+}
+  .desktopOnly {
+    display: none;
   }
 
-  .tags {
-    gap: 6px;
+  .mobileOnly {
+    display: block;
+
   }
 
-  .tagIcon {
-    width: 24px;
-    height: 24px;
+  .mobileStack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
+
+  .mobileGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+  }
+
+  .mobileHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 29px;
+    color: #ffffff;
+    font-family: Quicksand;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 36px;
+
+    line-height: 120%;
+  }
+
+  .mobileNum {
+    min-width: 28px;
+    text-align: right;
+    color: #ffffff;
+    opacity: .9;
+    font-family: Quicksand;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    padding-left: 20px;
+
+  }
+
+  .mobileGroup::after {
+    content: "";
+    display: block;
+    height: 60px;
+    background: #262E34;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+
+  }
+
+  /* omit the bar after the last item; remove if you want it */
+  .mobileGroup:last-child::after {
+    display: none;
+  }
+
+  /* remove chrome on mobile cards */
+  [data-variant="mobile"] {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  /* mobile flow: tags -> image -> text -> buttons */
+  [data-variant="mobile"] .cardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* title hidden on mobile (semantics kept) */
+  [data-variant="mobile"] .cardTitle {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
+
+  /* tags style */
+  [data-variant="mobile"] .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  [data-variant="mobile"] .tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #FFFFFF33;
+
+    border-radius: 10px;
+    padding: 6px 8px;
+  }
+
+  [data-variant="mobile"] .tagIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+  }
+
+  [data-variant="mobile"] .tagText {
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: #ffffff;
+  }
+
+  /* image */
+  [data-variant="mobile"] .imageWrap {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  [data-variant="mobile"] .image {
+    object-fit: cover;
+    display: block;
+  }
+
+  /* text */
+  [data-variant="mobile"] .description {
+    margin: 0;
+    color: #fff;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 125%;
+  }
+
+  /* buttons left-aligned */
+  [data-variant="mobile"] .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  [data-variant="mobile"] .btnPrimary,
+  .btnSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 120%;
+
+
+  }
+
+  [data-variant="mobile"] .btnPrimary {
+    background: #ffffff;
+    color: #3112dc;
+    border: 0;
+  }
+
+  [data-variant="mobile"] .btnSecondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+
+
+  .arrowBox {
+    display: none;
+  }
+
+  .seeMore {
+    display: inline-flex;
+    align-self: center;
+    padding: 14px 20px;
+    border-radius: 30px;
+    background: #266AD9;
+    color: #ffffff;
+    border: 0;
+    text-decoration: none;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 120%;
+    cursor: pointer;
+    width: fit-content;
+    height: auto;
+  }
+
+  .mobileCta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    background: #262E34;
+    margin-inline: calc(50% - 50vw);
+    margin-block: calc(-1 * 36px);
+    padding: 24px;
+  }
+
+  .mobileCtaText {
+    margin: 0 0 10px;
+    align-self: left;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #fff;
+  }
+  .mobileCta:has(.seeMore[aria-expanded="true"]) .mobileCtaText { display: none; }
+
 }
