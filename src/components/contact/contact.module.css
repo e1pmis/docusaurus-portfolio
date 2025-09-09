@@ -1,5 +1,6 @@
 .contact {
-  background-color: #111827;
+  background-color: #262E34;
+;
   color: white;
   padding: 8vw  6vw;
 }
@@ -25,7 +26,7 @@
 }
 
 .title {
-  font:  700 64px/120% 'Quicksand', system-ui, sans-serif;
+  font:  700 58px/120% 'Quicksand', system-ui, sans-serif;
   margin-bottom: 2rem;
   text-align: left; 
 }
