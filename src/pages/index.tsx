@@ -8,15 +8,14 @@ import ProjectHighlights from '@site/src/components/project-highlights';
 import Contact from '@site/src/components/contact';
 import Footer from '@site/src/components/footer';
 
-import styles from './Home.module.css';
 
 export default function Home() {
   return (
-    <Layout wrapperClassName={styles.page}>
+    <Layout >
       <Header />
       <Hero />
-       <MySkills />
-     <ProjectHighlights />
+      <MySkills />
+      <ProjectHighlights />
       <Contact />
       <Footer />
     </Layout>
