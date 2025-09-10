@@ -3,7 +3,6 @@
   position: relative;
   background: #266AD9;
   padding: 0 6vw;
-
   z-index: 100;
   transition: transform 200ms ease;
   will-change: transform;
@@ -12,7 +11,9 @@
 /* fixed header that stays out of view by default when scrolled */
 .affixed {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   transform: translateY(-100%);
 }
 
@@ -98,31 +99,10 @@
   background: currentColor;
 }
 
-@media (max-width:900px) {
-  .menu {
-    display: none;
-  }
-
-  .langBar {
-    display: none;
-  }
-
-  .menuToggle {
-    display: flex;
-  }
-}
-
-/* ===== MOBILE OVERLAY ONLY ===== */
-:root {
-  --primary: #2f6ce5;
-}
-
-/* hide on desktop explicitly */
 .mobileMenu {
   display: none;
 }
 
-/* important: no in-flow box on desktop */
 .mobileMenuInner {
   display: none;
 }
@@ -136,14 +116,26 @@
 }
 
 @media (max-width:900px) {
+
+  .menu {
+    display: none;
+  }
+
+  .langBar {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+    color: #fff;
+  }
+
   .mobileMenu {
     display: block;
-    /* visible only under 900px */
     position: fixed;
     inset: 0;
     z-index: 2000;
     background: transparent;
-    /* overlay blocks clicks only */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -156,7 +148,6 @@
     pointer-events: auto;
   }
 
-  /* centered panel; height relative to width */
   .mobileMenuInner {
     display: grid;
     position: fixed;
@@ -165,28 +156,25 @@
     top: 23%;
     width: 100vw;
     height: 75vw;
-    /* your desired ratio */
     transform: translateY(-50%);
     background: #fff;
-    color: var(--primary);
+    color: #266AD9;
     grid-template-rows: auto 1fr auto;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, .12);
     padding: clamp(16px, 6vw, 28px);
-    /* fixed clamp order (min <= max) */
   }
 
   .closeBtn {
     display: block;
     position: absolute;
     top: 12px;
-    right: 12px;
+    right: 24px;
     width: 36px;
     height: 36px;
-    font-size: 28px;
+    font-size: 48px;
     line-height: 1;
     border: 0;
     background: transparent;
-    color: var(--primary);
+    color: #000000;
     cursor: pointer;
   }
 
@@ -203,7 +191,7 @@
   }
 
   .menuLink {
-    color: var(--primary);
+    color: #266AD9;
     text-decoration: none;
     font: 600 clamp(18px, 6vw, 22px)/1.2 'Quicksand', system-ui, sans-serif;
   }
@@ -215,11 +203,11 @@
   .langMenu {
     display: flex;
     justify-content: center;
-    gap: 5px;
+   
     padding-bottom: 30px;
   }
 
-  /* cap vertical size of language buttons in the menu */
+
   .mobileMenu :is(.langBtn, .langBtnMobile) {
     display: inline-flex;
     align-items: center;
@@ -232,12 +220,12 @@
     white-space: nowrap;
     border-radius: .5rem;
     background: transparent;
-    color: var(--primary);
+    color: #266AD9;
     font-weight: 600;
     font-size: 18px;
   }
 
   .mobileMenu :is(.langActive, .langActiveMobile) {
-    background: rgba(47, 108, 229, .12);
+    background: rgba(255, 255, 255, 0.12);
   }
 }
