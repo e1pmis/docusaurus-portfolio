@@ -9,12 +9,12 @@ export default function Footer(): JSX.Element {
       <div className={styles.container}>
         <a href="#hero" className={styles.backToTop} aria-label="Back to top">
           <img
-            src="/icons/arrow-default.svg"
+            src="./icons/arrow-default.svg"
             alt=""
             className={styles.icon}
           />
           <img
-            src="/icons/arrow-hover.svg"
+            src="./icons/arrow-hover.svg"
             alt=""
             className={`${styles.icon} ${styles.iconHover}`}
           />
