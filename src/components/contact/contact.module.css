@@ -26,7 +26,7 @@ flex: 1;
 }
 
 .title {
-  font:  700 58px/120% 'Quicksand', system-ui, sans-serif;
+  font:  700 64px/120% 'Quicksand', system-ui, sans-serif;
   margin-bottom: 2rem;
   text-align: left; 
 }
@@ -95,3 +95,12 @@ flex: 1;
 .iconHover { opacity: 0; }
 .row:hover .icon { opacity: 0; }
 .row:hover .iconHover { opacity: 1; }
+
+@media (max-width: 768px) {
+
+.title {
+  font:  700 32px/120% 'Quicksand', system-ui, sans-serif;
+  margin-bottom: 2rem;
+  text-align: left; 
+}
+}

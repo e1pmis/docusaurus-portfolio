@@ -4,33 +4,51 @@ import styles from './my-skills.module.css';
 type Skill = { icon: string; label: string; bullets: string[] };
 
 const skills: Skill[] = [
-  { icon: './icons/html5.svg', label: 'HTML', bullets: [
-    'User-friendly navigation menus','Responsive web design','Contact forms and login pages','Transitions, animations, and hover effect',
-  ]},
-  { icon: './icons/css3.svg', label: 'CSS', bullets: [
-    'Layout grid and spacing system','Theming with CSS variables','Accessible states and focus','Reusable utility classes',
-  ]},
-  { icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
-    'Docs/blog structure and routing','Versioned content','MDX components','Fast dev server and builds',
-  ]},
-  { icon: './icons/python.svg', label: 'Python', bullets: [
-    'APIs and CLIs','Data parsing and analysis','Automation scripts','Unit tests and packaging',
-  ]},
-  { icon: './icons/shell.svg', label: 'Shell scripting', bullets: [
-    'Provisioning and bootstrap','Log rotation and backups','Cron jobs','One-liners for ops',
-  ]},
-  { icon: './icons/yaml.svg', label: 'Yaml', bullets: [
-    'App configurations','CI pipelines','Declarative manifests','Reusable anchors',
-  ]},
-  { icon: './icons/docker.svg', label: 'Container', bullets: [
-    'Multi-stage Dockerfiles','Small, secure images','Compose stacks','Image scanning',
-  ]},
-  { icon: './icons/githubactions.svg', label: 'CI/CD with GitHub Actions', bullets: [
-    'Build/test matrix','Caching and artifacts','Release pipelines','Environment gates',
-  ]},
-  { icon: './icons/security.svg', label: 'IT Security', bullets: [
-    'Secrets management','Hardening and audits','SAST/DAST integration','Least privilege access',
-  ]},
+  {
+    icon: './icons/html5.svg', label: 'HTML', bullets: [
+      'User-friendly navigation menus', 'Responsive web design', 'Contact forms and login pages', 'Transitions, animations, and hover effect',
+    ]
+  },
+  {
+    icon: './icons/css3.svg', label: 'CSS', bullets: [
+      'Layout grid and spacing system', 'Theming with CSS variables', 'Accessible states and focus', 'Reusable utility classes',
+    ]
+  },
+  {
+    icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
+      'Docs/blog structure and routing', 'Versioned content', 'MDX components', 'Fast dev server and builds',
+    ]
+  },
+  {
+    icon: './icons/python.svg', label: 'Python', bullets: [
+      'APIs and CLIs', 'Data parsing and analysis', 'Automation scripts', 'Unit tests and packaging',
+    ]
+  },
+  {
+    icon: './icons/shell.svg', label: 'Shell scripting', bullets: [
+      'Provisioning and bootstrap', 'Log rotation and backups', 'Cron jobs', 'One-liners for ops',
+    ]
+  },
+  {
+    icon: './icons/yaml.svg', label: 'Yaml', bullets: [
+      'App configurations', 'CI pipelines', 'Declarative manifests', 'Reusable anchors',
+    ]
+  },
+  {
+    icon: './icons/docker.svg', label: 'Container', bullets: [
+      'Multi-stage Dockerfiles', 'Small, secure images', 'Compose stacks', 'Image scanning',
+    ]
+  },
+  {
+    icon: './icons/githubactions.svg', label: 'CI/CD', bullets: [
+      'Build/test matrix', 'Caching and artifacts', 'Release pipelines', 'Environment gates',
+    ]
+  },
+  {
+    icon: './icons/security.svg', label: 'IT Security', bullets: [
+      'Secrets management', 'Hardening and audits', 'SAST/DAST integration', 'Least privilege access',
+    ]
+  },
 ];
 
 function Card({ icon, label, bullets }: Skill): JSX.Element {
@@ -91,7 +109,7 @@ export default function MySkills(): JSX.Element {
     return () => root.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToPage = (i:number) => {
+  const scrollToPage = (i: number) => {
     const root = contentRef.current;
     if (!root) return;
     const rows = root.querySelectorAll<HTMLElement>(`.${styles.row}`);
@@ -105,30 +123,32 @@ export default function MySkills(): JSX.Element {
         <div className={styles.wrap}>
           <header className={styles.headline}>
             <h2 className={styles.title}>My skills</h2>
+            <p className={styles.subtitle}>
+              Where I aplyed my skills            </p>
           </header>
 
-          <div ref={contentRef} className={styles.content}>  
+          <div ref={contentRef} className={styles.content}>
             <div className={styles.desk}>
               {skills.map((s) => <Card key={s.label} {...s} />)}
-              </div>  
-            <div className={styles.row}>  
-            {skills.slice(0, 3).map((s) => <Card key={s.label} {...s} />)}
+            </div>
+            <div className={styles.row}>
+              {skills.slice(0, 3).map((s) => <Card key={s.label} {...s} />)}
             </div>
             <div className={styles.row}>
               {skills.slice(3, 6).map((s) => <Card key={s.label} {...s} />)}
             </div>
             <div className={styles.row}>
               {skills.slice(6, 9).map((s) => <Card key={s.label} {...s} />)}
-            </div>  
-            </div>  
+            </div>
+          </div>
 
           <div className={styles.dots}>
-            {[0,1,2].map(i => (
+            {[0, 1, 2].map(i => (
               <button
                 key={i}
                 className={styles.dot}
                 aria-current={page === i ? 'true' : undefined}
-                aria-label={`Page ${i+1}`}
+                aria-label={`Page ${i + 1}`}
                 onClick={() => scrollToPage(i)}
               />
             ))}
