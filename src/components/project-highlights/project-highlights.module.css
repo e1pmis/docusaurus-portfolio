@@ -252,13 +252,17 @@
   color: #fff;
   border: 0;
 }
-
+.btnPrimary:hover {
+  background: #5696FF;
+}
 .btnSecondary {
   background: transparent;
   color: #fff;
   border: 1px solid #fff;
 }
-
+.btnSecondary:hover {
+  background: #FFFFFF29;
+}
 
 /* Viewport switches */
 .desktopOnly {
@@ -282,9 +286,11 @@
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
   }
-.wrap {
-  padding-bottom: 0;
-}
+
+  .wrap {
+    padding-bottom: 0;
+  }
+
   .desktopOnly {
     display: none;
   }
@@ -455,8 +461,11 @@
 
   [data-variant="mobile"] .btnPrimary {
     background: #ffffff;
-    color: #3112dc;
+    color:  #266AD9;
     border: 0;
+  }
+  .btnPrimary:hover {
+    background:  #FFFFFFD9;
   }
 
   [data-variant="mobile"] .btnSecondary {
@@ -464,7 +473,9 @@
     color: #fff;
     border: 1px solid #fff;
   }
-
+.btnSecondary:hover {
+    background: #5696FF;
+  }
 
   .arrowBox {
     display: none;
@@ -487,7 +498,9 @@
     width: fit-content;
     height: auto;
   }
-
+  .seeMore:hover {
+    background: #5696FF;
+  }
   .mobileCta {
     position: relative;
     display: flex;
@@ -509,6 +522,9 @@
     line-height: 1.25;
     color: #fff;
   }
-  .mobileCta:has(.seeMore[aria-expanded="true"]) .mobileCtaText { display: none; }
+
+  .mobileCta:has(.seeMore[aria-expanded="true"]) .mobileCtaText {
+    display: none;
+  }
 
 }
