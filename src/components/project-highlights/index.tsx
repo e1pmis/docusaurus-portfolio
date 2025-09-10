@@ -16,12 +16,12 @@ const PROJECTS: Project[] = [
   {
     id: 'conduit',
     name: 'Conduit Container',
-    image: '/img/projects/conduit.png',
+    image: './img/projects/conduit.png',
     tags: [
-      { icon: '/icons/yaml_b.svg', label: 'Yaml' },
-      { icon: '/icons/shell_b.svg', label: 'Shell' },
-      { icon: '/icons/docker_b.svg', label: 'Container' },
-      { icon: '/icons/githubactions_b.svg', label: 'CI/CD' },
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/githubactions_b.svg', label: 'CI/CD' },
     ],
     description:
       'Containerized RealWorld “Conduit”. Multi-stage Dockerfiles, image hardening, and CI pipelines for build, test, and release.',
@@ -31,11 +31,11 @@ const PROJECTS: Project[] = [
   {
     id: 'juice',
     name: 'Juice Shop',
-    image: '/img/projects/juiceshop.png',
+    image: './img/projects/juiceshop.png',
     tags: [
-      { icon: '/icons/security.svg', label: 'IT Security' },
-      { icon: '/icons/shell_b.svg', label: 'Shell' },
-      { icon: '/icons/python.svg', label: 'Python' },
+      { icon: './icons/security.svg', label: 'IT Security' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/python.svg', label: 'Python' },
     ],
     description:
       'OWASP Juice Shop automation. Reproducible deployments, scripted challenges, and security testing exercises.',
@@ -45,12 +45,12 @@ const PROJECTS: Project[] = [
   {
     id: 'minecraft',
     name: 'Minecraft server',
-    image: '/img/projects/minecraft.png',
+    image: './img/projects/minecraft.png',
     tags: [
-      { icon: '/icons/docker_b.svg', label: 'Container' },
-      { icon: '/icons/yaml_b.svg', label: 'Yaml' },
-      { icon: '/icons/shell_b.svg', label: 'Shell' },
-      { icon: '/icons/security.svg', label: 'IT Security' },
+      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/security.svg', label: 'IT Security' },
     ],
     description:
       'Automated Minecraft server with backups, mods, and monitoring. Compose stack, health checks, and zero-downtime updates.',
@@ -60,12 +60,12 @@ const PROJECTS: Project[] = [
   {
     id: 'wordpress',
     name: 'WordPress hosting',
-    image: '/img/projects/wordpress.png',
+    image: './img/projects/wordpress.png',
     tags: [
-      { icon: '/icons/docker_b.svg', label: 'Container' },
-      { icon: '/icons/yaml_b.svg', label: 'Yaml' },
-      { icon: '/icons/shell_b.svg', label: 'Shell' },
-      { icon: '/icons/security.svg', label: 'IT Security' },
+      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/security.svg', label: 'IT Security' },
     ],
     description:
       'Hardened WordPress hosting with backups, staging, and monitored updates. Compose stack and health checks.',
@@ -75,12 +75,12 @@ const PROJECTS: Project[] = [
   {
     id: 'trucks',
     name: 'Truck Signs API',
-    image: '/img/projects/trucksigns.png',
+    image: './img/projects/trucksigns.png',
     tags: [
-      { icon: '/icons/docker_b.svg', label: 'Container' },
-      { icon: '/icons/yaml_b.svg', label: 'Yaml' },
-      { icon: '/icons/shell_b.svg', label: 'Shell' },
-      { icon: '/icons/python.svg', label: 'Python' },
+      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/python.svg', label: 'Python' },
     ],
     description:
       'REST API for truck signage recognition. Containerized services, CI, and infra-as-code.',
@@ -90,11 +90,11 @@ const PROJECTS: Project[] = [
   {
     id: 'babytools',
     name: 'Baby Tools',
-    image: '/img/projects/babytools.png',
+    image: './img/projects/babytools.png',
     tags: [
-      { icon: '/icons/docker_b.svg', label: 'Container' },
-      { icon: '/icons/shell_b.svg', label: 'Shell' },
-      { icon: '/icons/python.svg', label: 'Python' },
+      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/python.svg', label: 'Python' },
     ],
     description:
       'E-commerce demo with automation, backups, and monitoring. Reproducible local and prod deploys.',
