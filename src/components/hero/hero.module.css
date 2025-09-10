@@ -62,14 +62,16 @@
   padding: 14px 20px;
   border-radius: 30px;
   background: #ffffff;
-  color: #266AD9;
+  color: 266AD9;
   text-decoration: none;
   font-family: 'Quicksand', system-ui, sans-serif;
   font-weight: 600;
   font-size: clamp(16px, 1.8vw, 20px);
   line-height: 120%;
 }
-
+.cta:hover {
+  background: #FFFFFFD9;
+}
 /* right picture (desktop) */
 .picCol {
   display: flex;
