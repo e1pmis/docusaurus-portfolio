@@ -4,31 +4,31 @@ import styles from './my-skills.module.css';
 type Skill = { icon: string; label: string; bullets: string[] };
 
 const skills: Skill[] = [
-  { icon: '/icons/html5.svg', label: 'HTML', bullets: [
+  { icon: './icons/html5.svg', label: 'HTML', bullets: [
     'User-friendly navigation menus','Responsive web design','Contact forms and login pages','Transitions, animations, and hover effect',
   ]},
-  { icon: '/icons/css3.svg', label: 'CSS', bullets: [
+  { icon: './icons/css3.svg', label: 'CSS', bullets: [
     'Layout grid and spacing system','Theming with CSS variables','Accessible states and focus','Reusable utility classes',
   ]},
-  { icon: '/icons/docusaurus.svg', label: 'Static site generator', bullets: [
+  { icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
     'Docs/blog structure and routing','Versioned content','MDX components','Fast dev server and builds',
   ]},
-  { icon: '/icons/python.svg', label: 'Python', bullets: [
+  { icon: './icons/python.svg', label: 'Python', bullets: [
     'APIs and CLIs','Data parsing and analysis','Automation scripts','Unit tests and packaging',
   ]},
-  { icon: '/icons/shell.svg', label: 'Shell scripting', bullets: [
+  { icon: './icons/shell.svg', label: 'Shell scripting', bullets: [
     'Provisioning and bootstrap','Log rotation and backups','Cron jobs','One-liners for ops',
   ]},
-  { icon: '/icons/yaml.svg', label: 'Yaml', bullets: [
+  { icon: './icons/yaml.svg', label: 'Yaml', bullets: [
     'App configurations','CI pipelines','Declarative manifests','Reusable anchors',
   ]},
-  { icon: '/icons/docker.svg', label: 'Container', bullets: [
+  { icon: './icons/docker.svg', label: 'Container', bullets: [
     'Multi-stage Dockerfiles','Small, secure images','Compose stacks','Image scanning',
   ]},
-  { icon: '/icons/githubactions.svg', label: 'CI/CD with GitHub Actions', bullets: [
+  { icon: './icons/githubactions.svg', label: 'CI/CD with GitHub Actions', bullets: [
     'Build/test matrix','Caching and artifacts','Release pipelines','Environment gates',
   ]},
-  { icon: '/icons/security.svg', label: 'IT Security', bullets: [
+  { icon: './icons/security.svg', label: 'IT Security', bullets: [
     'Secrets management','Hardening and audits','SAST/DAST integration','Least privilege access',
   ]},
 ];
