@@ -8,7 +8,6 @@
   will-change: transform;
 }
 
-/* fixed header that stays out of view by default when scrolled */
 .affixed {
   position: fixed;
   top: 0;
@@ -17,7 +16,6 @@
   transform: translateY(-100%);
 }
 
-/* reveal only while scrolling up */
 .reveal {
   transform: translateY(0);
 }
@@ -45,8 +43,13 @@
 }
 
 .link {
-  font: 600 clamp(1rem, 2vw, 1.5rem)/1.2 'Quicksand', system-ui, sans-serif;
   color: #fff;
+  font-family: Quicksand;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
 }
 
 .link:hover {
@@ -203,7 +206,7 @@
   .langMenu {
     display: flex;
     justify-content: center;
-   
+
     padding-bottom: 30px;
   }
 
