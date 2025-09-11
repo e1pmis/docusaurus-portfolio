@@ -63,12 +63,17 @@
 
 .lang {
   display: flex;
-  gap: .5rem;
+  gap: 10px;
+}
+
+.langBar {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
 }
 
 .langBtn {
-  min-width: clamp(2rem, 4.5vw, 2.75rem);
-  min-height: clamp(1.75rem, 4.5vw, 2.2rem);
+
   padding: .25rem .5rem;
   border-radius: .3rem;
   border: 0;
@@ -210,7 +215,12 @@
   .menuLink {
     color: #266AD9;
     text-decoration: none;
-    font: 600 clamp(18px, 6vw, 22px)/1.2 'Quicksand', system-ui, sans-serif;
+    font-family: Quicksand;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 22px;
+    line-height: 120%;
+    letter-spacing: 0%;
   }
 
   .menuLink:hover {
@@ -220,7 +230,6 @@
   .langMenu {
     display: flex;
     justify-content: center;
-
     padding-bottom: 30px;
   }
 
