@@ -1,15 +1,15 @@
 .contact {
   background-color: #262E34;
   color: white;
-  padding: 8vw  6vw;
+  padding: 0 6vw;
+  padding-top: 80px;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 2rem;
-
+  gap: clamp(30px , 30vw , 400px);
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -20,32 +20,50 @@
 }
 
 .right {
-flex: 1;
+  flex: 1;
   min-width: 280px;
-  padding-top: 90px;
+  padding-top: 32px;
 }
 
 .title {
-  font:  700 64px/120% 'Quicksand', system-ui, sans-serif;
-  margin-bottom: 2rem;
-  text-align: left; 
+  font: 700 64px/120% 'Quicksand', system-ui, sans-serif;
+  margin-bottom: 32px;
+  text-align: left;
 }
 
 .list {
   list-style-type: disc;
   padding-left: 1.2rem;
   line-height: 1.6;
+  font-family: Quicksand;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+
 }
 
 .subtitle {
+  font-family: Quicksand;
   font-weight: 500;
-  margin-bottom: 1.5rem;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  padding-bottom: 20px;
 }
 
 .details {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: Quicksand;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
 }
 
 .details li {
@@ -53,11 +71,12 @@ flex: 1;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
+
 }
 
 .details img {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .details a {
@@ -68,6 +87,7 @@ flex: 1;
 .details a:hover {
   text-decoration: underline;
 }
+
 /* make the whole row the hover target (used on <a>) */
 .row {
   display: inline-flex;
@@ -80,10 +100,11 @@ flex: 1;
 /* icon swap on hover */
 .iconWrap {
   position: relative;
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
 }
+
 .icon,
 .iconHover {
   position: absolute;
@@ -92,15 +113,52 @@ flex: 1;
   height: 100%;
   transition: opacity 160ms ease;
 }
-.iconHover { opacity: 0; }
-.row:hover .icon { opacity: 0; }
-.row:hover .iconHover { opacity: 1; }
+
+.iconHover {
+  opacity: 0;
+}
+
+.row:hover .icon {
+  opacity: 0;
+}
+
+.row:hover .iconHover {
+  opacity: 1;
+}
 
 @media (max-width: 768px) {
+  .container {
+    flex-direction: column ;
+    gap: 30px;
+  }
 
-.title {
-  font:  700 32px/120% 'Quicksand', system-ui, sans-serif;
-  margin-bottom: 2rem;
-  text-align: left; 
-}
+  .title {
+    font: 700 32px/120% 'Quicksand', system-ui, sans-serif;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .right {
+    padding-top: 0px;
+  }
+
+  .subtitle {
+    font-family: Quicksand;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    padding-bottom: 0;
+  }
+
+  .list {
+
+    font-size: 16px;
+    line-height: 110%;
+  }
+
+  .details {
+    font-size: 16px;
+  }
 }
