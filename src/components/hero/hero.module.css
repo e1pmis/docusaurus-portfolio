@@ -6,7 +6,7 @@
 
 .grid {
   display: grid;
-  align-items: center;
+  align-items: top;
   grid-template-columns: 1fr minmax(280px, 441.62px);
   column-gap: clamp(40px, 8vw, 115px);
   padding-top: clamp(40px, 5vw, 60px);
@@ -18,39 +18,49 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(16px, 3vw, 40px);
   max-width: 664px;
 }
 
 .kicker {
-  font-family: 'Quicksand', system-ui, sans-serif;
+  font-family: Quicksand;
   font-weight: 400;
-  font-size: clamp(22px, 2.6vw, 32px);
+  font-style: Regular;
+  font-size: 32px;
   line-height: 120%;
+  letter-spacing: 0%;
+  padding-bottom: 8px;
+
 }
 
 .name {
-  margin: 0;
-  font-family: 'Quicksand', system-ui, sans-serif;
+  font-family: Quicksand;
   font-weight: 700;
-  font-size: clamp(32px, 4vw, 48px);
+  font-style: Bold;
+  font-size: 68px;
   line-height: 120%;
+  letter-spacing: 0%;
 }
 
 .role {
-  font-family: 'Quicksand', system-ui, sans-serif;
+  font-family: Quicksand;
   font-weight: 500;
-  font-size: clamp(22px, 2.6vw, 32px);
+  font-style: Medium;
+  font-size: 32px;
   line-height: 120%;
+  letter-spacing: 0%;
+  padding-bottom: 40px;
 }
 
 .blurb {
   margin: 0;
   max-width: 664px;
-  font-family: 'Quicksand', system-ui, sans-serif;
+  font-family: Quicksand;
   font-weight: 600;
-  font-size: clamp(16px, 1.8vw, 22px);
+  font-style: SemiBold;
+  font-size: 22px;
   line-height: 120%;
+  letter-spacing: 0%;
+  padding-bottom: 40px;
 }
 
 /* CTA button */
@@ -62,16 +72,18 @@
   padding: 14px 20px;
   border-radius: 30px;
   background: #ffffff;
-  color: 266AD9;
+  color: #266AD9;
   text-decoration: none;
   font-family: 'Quicksand', system-ui, sans-serif;
   font-weight: 600;
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: 20px;
   line-height: 120%;
 }
+
 .cta:hover {
   background: #FFFFFFD9;
 }
+
 /* right picture (desktop) */
 .picCol {
   display: flex;
@@ -79,8 +91,8 @@
 }
 
 .photo {
-  width: clamp(280px, 30vw, 441.62px);
-  height: clamp(300px, 32vw, 479px);
+  width: 441.62px;
+  height: 479px;
   object-fit: cover;
   border-radius: 30px;
   transform: scaleX(-1);
@@ -99,7 +111,7 @@
 /* shown on desktop */
 
 /* collapse to single column + center on smaller widths */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
     row-gap: 24px;
@@ -109,24 +121,72 @@
 
   .textCol {
     align-items: left;
-    /* center texts */
     text-align: left;
   }
 
+  .kicker {
+    font-family: Quicksand;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    padding-bottom: 8px
+  }
+
+  .name {
+    margin: 0;
+    font-family: Quicksand;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 37px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .role {
+    font-family: Quicksand;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-top: 5px;
+    padding-bottom: 40px;
+  }
+
+  .blurb {
+    margin: 0;
+    max-width: 325px;
+    font-family: Quicksand;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+
   .cta {
+    font-size: 16px;
     margin-inline: auto;
   }
 
-  /* center button */
 
   .picDesktop {
     display: none;
   }
 
-  /* hide right pic on mobile */
   .picMobile {
     display: flex;
-    /* show mobile pic under role */
     justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .picMobile .photo {
+    width: 320px;
+    height: 320px;
   }
 }
