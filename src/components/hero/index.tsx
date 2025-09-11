@@ -9,7 +9,7 @@ export default function Hero(): JSX.Element {
         <div className={styles.textCol}>
           <div className={styles.kicker}>Hey there, 👋 I am</div>
           <h1 className={styles.name}>Abdullah Alibrahim</h1>
-          <div className={styles.role}>Security operations developer</div>
+          <div className={styles.role}>Security operations Engineer</div>
 
           {/* mobile-only picture directly under the role */}
           <div className={styles.picMobile}>
