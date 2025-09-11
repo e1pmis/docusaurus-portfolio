@@ -23,6 +23,8 @@ export default function Hero(): JSX.Element {
           <p className={styles.blurb}>
             I design and automate secure pipelines, containers, and infrastructure.
             I like measurable reliability, clear incident playbooks, and repeatable builds.
+            I design and automate secure pipelines, containers, and infrastructure.
+            I like measurable reliability, clear incident playbooks, and repeatable builds.
           </p>
 
           <a href="#contact" className={styles.cta}>Contact me</a>
