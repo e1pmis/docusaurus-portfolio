@@ -5,18 +5,18 @@ type Skill = { icon: string; label: string; bullets: string[] };
 
 const skills: Skill[] = [
   {
-    icon: './icons/html5.svg', label: 'HTML', bullets: [
-      'User-friendly navigation menus', 'Responsive web design', 'Contact forms and login pages', 'Transitions, animations, and hover effect',
+    icon: './icons/docker.svg', label: 'Container', bullets: [
+      'Multi-stage Dockerfiles', 'Small, secure images', 'Compose stacks', 'Image scanning',
     ]
   },
   {
-    icon: './icons/css3.svg', label: 'CSS', bullets: [
-      'Layout grid and spacing system', 'Theming with CSS variables', 'Accessible states and focus', 'Reusable utility classes',
+    icon: './icons/githubactions.svg', label: 'CI/CD', bullets: [
+      'Build/test matrix', 'Caching and artifacts', 'Release pipelines', 'Environment gates',
     ]
   },
   {
-    icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
-      'Docs/blog structure and routing', 'Versioned content', 'MDX components', 'Fast dev server and builds',
+    icon: './icons/security.svg', label: 'IT Security', bullets: [
+      'Secrets management', 'Hardening and audits', 'SAST/DAST integration', 'Least privilege access',
     ]
   },
   {
@@ -35,18 +35,18 @@ const skills: Skill[] = [
     ]
   },
   {
-    icon: './icons/docker.svg', label: 'Container', bullets: [
-      'Multi-stage Dockerfiles', 'Small, secure images', 'Compose stacks', 'Image scanning',
+    icon: './icons/html5.svg', label: 'HTML', bullets: [
+      'User-friendly navigation menus', 'Responsive web design', 'Contact forms and login pages', 'Transitions, animations, and hover effect',
     ]
   },
   {
-    icon: './icons/githubactions.svg', label: 'CI/CD', bullets: [
-      'Build/test matrix', 'Caching and artifacts', 'Release pipelines', 'Environment gates',
+    icon: './icons/css3.svg', label: 'CSS', bullets: [
+      'Layout grid and spacing system', 'Theming with CSS variables', 'Accessible states and focus', 'Reusable utility classes',
     ]
   },
   {
-    icon: './icons/security.svg', label: 'IT Security', bullets: [
-      'Secrets management', 'Hardening and audits', 'SAST/DAST integration', 'Least privilege access',
+    icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
+      'Docs/blog structure and routing', 'Versioned content', 'MDX components', 'Fast dev server and builds',
     ]
   },
 ];
