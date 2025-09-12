@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
       { icon: './icons/githubactions_b.svg', label: 'CI/CD' },
     ],
     description:
-      'Containerized RealWorld “Conduit”. Multi-stage Dockerfiles, image hardening, and CI pipelines for build, test, and release.',
+      'Containerized RealWorld “Conduit”. Multi-stage Dockerfiles,Containerized RealWorld “Conduit”. Multi-stage Dockerfiles, Containerized RealWorld “Conduit”. Multi-stage Dockerfiles, Containerized RealWorld “Conduit”. Multi-stage Dockerfiles,  image hardening, and CI pipelines for build, test, and release.',
     docUrl: 'https://example.com/conduit/docs',
     githubUrl: 'https://github.com/e1pmiS/conduit-container',
   },
@@ -240,7 +240,9 @@ export default function ProjectHighlights(): JSX.Element {
                   aria-expanded={expanded}
                   aria-controls={listId}
                 >
-                  <span className={styles.arrowBox}><span className={styles.arrow} aria-hidden="true">↗</span></span>
+                  <span className={styles.arrowBox} aria-hidden="true">
+                    <img src="./icons/arrow_d.svg" alt="" className={styles.arrowImg} />
+                  </span>
                   <span>{expanded ? 'See fewer projects' : 'See more projects'}</span>
                 </button>
               )}
