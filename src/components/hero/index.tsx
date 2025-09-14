@@ -21,11 +21,9 @@ export default function Hero(): JSX.Element {
           </div>
 
           <p className={styles.blurb}>
-            I design and automate secure pipelines, containers, and infrastructure.
-            I like measurable reliability, clear incident playbooks, and repeatable builds.
-            I design and automate secure pipelines, containers, and infrastructure.
-            I like measurable reliability, clear incident playbooks, and repeatable builds.
-          </p>
+            I build secure, scalable systems using containers, orchestration, and infrastructure as code. My focus is smooth, reliable deployments and CI/CD pipelines that balance speed with safety. <br /> 
+            <br />With an M.Sc. in IT, I combine technical depth, strong analytical ability, and continuous learning to deliver secure and robust system architectures.
+             </p>
 
           <a href="#contact" className={styles.cta}>Contact me</a>
         </div>

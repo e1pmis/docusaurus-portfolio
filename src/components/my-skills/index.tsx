@@ -5,48 +5,77 @@ type Skill = { icon: string; label: string; bullets: string[] };
 
 const skills: Skill[] = [
   {
-    icon: './icons/docker.svg', label: 'Container', bullets: [
-      'Multi-stage Dockerfiles', 'Small, secure images', 'Compose stacks', 'Image scanning',
+    icon: './icons/docker.svg', label: 'Docker', bullets: [
+      'Multi-stage Docker builds for efficiency',
+      'Managing services with Docker Compose',
+      'Networking and volume management',
+      'Reproducible development and production environments',
     ]
   },
   {
     icon: './icons/githubactions.svg', label: 'CI/CD', bullets: [
-      'Build/test matrix', 'Caching and artifacts', 'Release pipelines', 'Environment gates',
+      'Automated build and test workflows',
+      'Matrix builds across versions and environments',
+      'Staged deployments to development and production',
+      'Pipeline monitoring and troubleshooting',
     ]
   },
   {
     icon: './icons/security.svg', label: 'IT Security', bullets: [
-      'Secrets management', 'Hardening and audits', 'SAST/DAST integration', 'Least privilege access',
+      'Secure credentials in apps and pipelines',
+      'Harden hosts with policies and firewalls',
+      'Enforce least-privilege access',
+      'Analyze logs and audits for anomalies',
     ]
   },
   {
     icon: './icons/python.svg', label: 'Python', bullets: [
-      'APIs and CLIs', 'Data parsing and analysis', 'Automation scripts', 'Unit tests and packaging',
+      'Building APIs and command-line tools',
+      'Writing automation and utility scripts',
+      'Working with data formats and libraries',
+      'Virtual environments and dependency management',
     ]
   },
   {
     icon: './icons/shell.svg', label: 'Shell scripting', bullets: [
-      'Provisioning and bootstrap', 'Log rotation and backups', 'Cron jobs', 'One-liners for ops',
+      'Provisioning and setup scripts for environments',
+      'Automating repetitive maintenance tasks',
+      'Custom log filtering and parsing',
+      'Quick diagnostics and fixes with one-liners',
     ]
   },
   {
     icon: './icons/yaml.svg', label: 'Yaml', bullets: [
-      'App configurations', 'CI pipelines', 'Declarative manifests', 'Reusable anchors',
+      'Define app and service configurations',
+      'Writing declarative CI/CD pipeline files',
+      'Reusable configuration blocks across projects',
+      'Version-control infrastructure manifests',
     ]
   },
   {
     icon: './icons/html5.svg', label: 'HTML', bullets: [
-      'User-friendly navigation menus', 'Responsive web design', 'Contact forms and login pages', 'Transitions, animations, and hover effect',
+      'Semantic page structures',
+      'Accessible forms and inputs',
+      'Tables and data presentation',
+      'Media embedding and integration',
     ]
+
   },
   {
     icon: './icons/css3.svg', label: 'CSS', bullets: [
-      'Layout grid and spacing system', 'Theming with CSS variables', 'Accessible states and focus', 'Reusable utility classes',
+      'Responsive layouts with flexbox/grid',
+      'Reusable utility classes',
+      'Consistent theming with variables',
+      'Smooth transitions and hover effects',
     ]
+
   },
   {
     icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
-      'Docs/blog structure and routing', 'Versioned content', 'MDX components', 'Fast dev server and builds',
+      'Documentation and blog setup',
+      'Versioned content management',
+      'Custom MDX components',
+      'Optimized builds and deployments',
     ]
   },
 ];

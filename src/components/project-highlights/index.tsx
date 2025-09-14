@@ -20,17 +20,17 @@ const PROJECTS: Project[] = [
     tags: [
       { icon: './icons/yaml_b.svg', label: 'Yaml' },
       { icon: './icons/shell_b.svg', label: 'Shell' },
-      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/docker_b.svg', label: 'Docker' },
       { icon: './icons/githubactions_b.svg', label: 'CI/CD' },
     ],
     description:
-      'Containerized RealWorld “Conduit”. Multi-stage Dockerfiles,Containerized RealWorld “Conduit”. Multi-stage Dockerfiles, Containerized RealWorld “Conduit”. Multi-stage Dockerfiles, Containerized RealWorld “Conduit”. Multi-stage Dockerfiles,  image hardening, and CI pipelines for build, test, and release.',
-    docUrl: 'https://example.com/conduit/docs',
+      'Conduit Container is my take on deploying full-stack applications in a secure and repeatable way. Both frontend and backend run as Docker services, while a single CI/CD pipeline drives builds, releases, and deployments from start to finish. The outcome is a workflow I can rely on less manual overhead, fewer mistakes, and faster delivery. This project represents how I approach DevSecOps: combining automation with stability to make deployments dependable by default.',
+    docUrl: 'https://github.com/e1pmiS/conduit-container/blob/main/README.md',
     githubUrl: 'https://github.com/e1pmiS/conduit-container',
   },
   {
     id: 'juice',
-    name: 'Juice Shop',
+    name: 'OWASP Juice Shop',
     image: './img/projects/juiceshop.png',
     tags: [
       { icon: './icons/security.svg', label: 'IT Security' },
@@ -38,8 +38,8 @@ const PROJECTS: Project[] = [
       { icon: './icons/python.svg', label: 'Python' },
     ],
     description:
-      'OWASP Juice Shop automation. Reproducible deployments, scripted challenges, and security testing exercises.',
-    docUrl: 'https://example.com/juice/docs',
+      'Juice Shop Meister is a security-focused project where I documented and demonstrated vulnerabilities in OWASP Juice Shop. I combined technical write-ups with video walkthroughs to show not just how exploits work, but why they matter. Each exercise strengthened my ability to think like both attacker and defender while communicating risk clearly. The project reflects my approach to learning security hands-on and turning complex exploits into accessible knowledge.',
+    docUrl: 'https://github.com/e1pmiS/Juice_Shop_Meister/blob/main/README.md',
     githubUrl: 'https://github.com/e1pmiS/Juice_Shop_Meister',
   },
   {
@@ -47,29 +47,32 @@ const PROJECTS: Project[] = [
     name: 'Minecraft server',
     image: './img/projects/minecraft.png',
     tags: [
-      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/docker_b.svg', label: 'Docker' },
       { icon: './icons/yaml_b.svg', label: 'Yaml' },
       { icon: './icons/shell_b.svg', label: 'Shell' },
       { icon: './icons/security.svg', label: 'IT Security' },
     ],
     description:
-      'Automated Minecraft server with backups, mods, and monitoring. Compose stack, health checks, and zero-downtime updates.',
-    docUrl: 'https://example.com/minecraft/docs',
-    githubUrl: 'https://github.com/yourname/minecraft-server',
+      'The Project provides a lightweight Docker Compose setup for hosting a game server. World data, configuration, and logs are kept persistent, allowing the server to be restarted or updated without data loss. Core settings are controlled through environment variables, and upgrades are handled by replacing the server JAR. It reflects my focus on building practical, maintainable solutions with clean containerization practices.',
+    docUrl: 'https://github.com/e1pmiS/minecraft-server/blob/review/README.md',
+    githubUrl: 'https://github.com/e1pmiS/minecraft-server',
   },
   {
     id: 'wordpress',
     name: 'WordPress hosting',
     image: './img/projects/wordpress.png',
     tags: [
-      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/docker_b.svg', label: 'Docker' },
       { icon: './icons/yaml_b.svg', label: 'Yaml' },
       { icon: './icons/shell_b.svg', label: 'Shell' },
       { icon: './icons/security.svg', label: 'IT Security' },
     ],
     description:
-      'Hardened WordPress hosting with backups, staging, and monitored updates. Compose stack and health checks.',
-    docUrl: 'https://example.com/wp/docs',
+      `WordPress hosting environment built with Docker Compose, paired with a MySQL backend.
+        Volumes ensure site content and database data remain intact across container restarts.
+        Configuration is managed through a .env file, keeping the setup clean and adaptable.
+        For me, the project was about turning a traditionally heavy CMS into something lightweight, reliable, and easy to run.`,
+    docUrl: 'https://github.com/e1pmiS/WordPress-Docker-Project/blob/main/README.md',
     githubUrl: 'https://github.com/e1pmiS/WordPress-Docker-Project',
   },
   {
@@ -77,14 +80,17 @@ const PROJECTS: Project[] = [
     name: 'Truck Signs API',
     image: './img/projects/trucksigns.png',
     tags: [
-      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/docker_b.svg', label: 'Docker' },
       { icon: './icons/yaml_b.svg', label: 'Yaml' },
       { icon: './icons/shell_b.svg', label: 'Shell' },
       { icon: './icons/python.svg', label: 'Python' },
     ],
     description:
-      'REST API for truck signage recognition. Containerized services, CI, and infra-as-code.',
-    docUrl: 'https://example.com/trucks/docs',
+      `Django-based e-commerce backend containerized with Docker and PostgreSQL.
+      Services communicate over a dedicated Docker network, with environment variables managed through .env files.
+      Includes superuser setup and product management via Django’s admin, making the system usable out of the box.
+      For me, the project highlighted how clean containerization and secure configs can make backend deployments both practical and dependable.`,
+    docUrl: 'https://github.com/e1pmiS/truck_signs_api/blob/main/README.md',
     githubUrl: 'https://github.com/e1pmiS/truck_signs_api',
   },
   {
@@ -92,12 +98,15 @@ const PROJECTS: Project[] = [
     name: 'Baby Tools',
     image: './img/projects/babytools.png',
     tags: [
-      { icon: './icons/docker_b.svg', label: 'Container' },
+      { icon: './icons/docker_b.svg', label: 'Docker' },
       { icon: './icons/shell_b.svg', label: 'Shell' },
       { icon: './icons/python.svg', label: 'Python' },
     ],
     description:
-      'E-commerce demo with automation, backups, and monitoring. Reproducible local and prod deploys.',
+      `Baby Tools started as an experiment in packaging a small Django shop into a containerized service.
+      Instead of relying on a default image, I wrote a custom Dockerfile to shape the Python environment and handle dependencies my way.
+      The result was a setup that I could launch, manage, and update without breaking consistency.
+      It gave me a deeper feel for how containerization turns even a simple web app into something repeatable and production-ready.`,
     docUrl: 'https://github.com/e1pmiS/baby-tools-shop/blob/main/README.md',
     githubUrl: 'https://github.com/e1pmiS/baby-tools-shop',
   },

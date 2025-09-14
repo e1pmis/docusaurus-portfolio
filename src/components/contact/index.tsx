@@ -9,10 +9,11 @@ export default function Contact(): JSX.Element {
           <div className={styles.left}>
             <h2 className={styles.title}>Contact me</h2>
             <ul className={styles.list}>
-              <li>Feel free to reach out with job offers or opportunities.</li>
-              <li>What role are you looking for?</li>
-              <li>How will you contribute to the new team?</li>
-              <li>Are you open for remote work or relocation?</li>
+              <p>Let’s connect, Here’s what I’m looking for and what I can offer:</p>
+            <li> Open to opportunities in DevSecOps, Cloud, Software/Hardware Engineering roles</li>
+            <li>Take complex projects from concept through implementation, optimization, and validation</li>
+            <li>Bring strong analytical skills, learn quickly, and collaborate effectively in team environments</li>
+            <li>Open to remote work and relocation</li>
             </ul>
           </div>
 
@@ -39,7 +40,7 @@ export default function Contact(): JSX.Element {
                     <img className={styles.icon} src="./icons/linkedin.svg" alt="" />
                     <img className={styles.iconHover} src="./icons/linkedin_hover.svg" alt="" />
                   </span>
-                  <span>Profile Page</span>
+                  <span>LinkedIn Profile Page</span>
                 </a>
               </li>
             </ul>
