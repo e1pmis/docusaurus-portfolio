@@ -2,7 +2,7 @@
 .section {
   background: #262E34;
   color: #fff;
-  padding: 80px 6vw;
+  padding: 80px 10vw;
 }
 
 .wrap {
@@ -32,6 +32,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 24px;
 }
 
@@ -136,6 +137,11 @@
 
 /* ===== Mobile / pager (≤780px): 3 cards per page, swipe rows ===== */
 @media (max-width:780px) {
+  .section {
+  background: #262E34;
+  color: #fff;
+  padding: 80px 6vw;
+}
   .usedTitle {
     display: none;
   }
