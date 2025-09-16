@@ -17,7 +17,7 @@ export default function Footer(): JSX.Element {
         </a>
 
         <p className={styles.copy}>© Abdullah Alibrahim {year}</p>
-        <Link to="/legal" className={styles.legal}>Legal notice</Link>
+        <a href="/legal" className={styles.legal}>Legal notice</a>
       </div>
     </footer>
   );
