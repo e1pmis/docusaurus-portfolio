@@ -8,12 +8,12 @@ export default function Contact(): JSX.Element {
         <div className={styles.container}>
           <div className={styles.left}>
             <h2 className={styles.title}>Contact me</h2>
+            <p className={styles.offer}>Let’s connect, here’s what I’m looking for and what I can offer:</p>
             <ul className={styles.list}>
-              <p>Let’s connect, Here’s what I’m looking for and what I can offer:</p>
-            <li> Open to opportunities in DevSecOps, Cloud, Software/Hardware Engineering roles</li>
-            <li>Take complex projects from concept through implementation, optimization, and validation</li>
-            <li>Bring strong analytical skills, learn quickly, and collaborate effectively in team environments</li>
-            <li>Open to remote work and relocation</li>
+              <li> Open to opportunities in DevSecOps, Cloud, Software/Hardware Engineering roles</li>
+              <li>Take complex projects from concept through implementation, optimization, and validation</li>
+              <li>Bring strong analytical skills, learn quickly, and collaborate effectively in team environments</li>
+              <li>Open to remote work and relocation</li>
             </ul>
           </div>
 
