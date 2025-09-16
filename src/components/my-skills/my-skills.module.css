@@ -135,7 +135,7 @@
 
 
 /* ===== Mobile / pager (≤780px): 3 cards per page, swipe rows ===== */
-@media (max-width:780px) {
+@media (max-width:768px) {
   .section {
   padding: 80px 6vw;
 }
