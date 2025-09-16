@@ -76,10 +76,6 @@
   opacity: 0;
 }
 
-.backToTop:hover .icon,
-.backToTop:focus-visible .icon {
-  opacity: 0;
-}
 
 .backToTop:hover .iconHover,
 .backToTop:focus-visible .iconHover {
