@@ -27,7 +27,6 @@
   display: none;
 }
 
-.content,
 .desk {
   display: flex;
   flex-wrap: wrap;
@@ -138,8 +137,6 @@
 /* ===== Mobile / pager (≤780px): 3 cards per page, swipe rows ===== */
 @media (max-width:780px) {
   .section {
-  background: #262E34;
-  color: #fff;
   padding: 80px 6vw;
 }
   .usedTitle {
@@ -178,6 +175,7 @@
     overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-x pan-y;
+    gap: 16px;
   }
 
   .content::-webkit-scrollbar {

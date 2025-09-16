@@ -1,7 +1,7 @@
 .section {
   background: #266AD9;
   color: #fff;
-  padding: 0 6vw;
+  padding: 0 10vw;
 }
 
 .wrap {
@@ -287,6 +287,11 @@
 
 /* ===== Mobile card overrides, reuse same class names ===== */
 @media (max-width:700px) {
+  .section {
+    background: #266AD9;
+    color: #fff;
+    padding: 0 6vw;
+  }
 
   .visuallyHidden {
     position: absolute !important;
