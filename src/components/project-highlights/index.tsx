@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 'minecraft',
-    name: 'Minecraft server',
+    name: 'Minecraft Server',
     image: './img/projects/minecraft.png',
     tags: [
       { icon: './icons/docker_b.svg', label: 'Docker' },
@@ -95,7 +95,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 'babytools',
-    name: 'Baby Tools',
+    name: 'Baby Tools Shop',
     image: './img/projects/babytools.png',
     tags: [
       { icon: './icons/docker_b.svg', label: 'Docker' },
