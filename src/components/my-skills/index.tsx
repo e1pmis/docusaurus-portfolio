@@ -6,76 +6,74 @@ type Skill = { icon: string; label: string; bullets: string[] };
 const skills: Skill[] = [
   {
     icon: './icons/docker.svg', label: 'Docker', bullets: [
-      'Multi-stage Docker builds for efficiency',
-      'Managing services with Docker Compose',
+      'Multi-stage Docker builds ',
+      'Managing services Compose',
       'Networking and volume management',
-      'Reproducible development and production environments',
+      'Reproducible environments',
     ]
   },
   {
     icon: './icons/githubactions.svg', label: 'CI/CD', bullets: [
-      'Automated build and test workflows',
-      'Matrix builds across versions and environments',
-      'Staged deployments to development and production',
-      'Pipeline monitoring and troubleshooting',
+      'Automated builds and tests',
+      'Matrix builds across versions',
+      'Staged dev and prod deployments',
+      'Pipeline monitoring and fixes',
     ]
   },
   {
     icon: './icons/security.svg', label: 'IT Security', bullets: [
-      'Secure credentials in apps and pipelines',
-      'Harden hosts with policies and firewalls',
-      'Enforce least-privilege access',
-      'Analyze logs and audits for anomalies',
+      'Pentesting web apps and services',
+      'Secure credentials in pipelines',
+      'Host hardening with policies',
+      'Least-privilege access control',
     ]
   },
   {
     icon: './icons/python.svg', label: 'Python', bullets: [
-      'Building APIs and command-line tools',
-      'Writing automation and utility scripts',
-      'Working with data formats and libraries',
-      'Virtual environments and dependency management',
+      'Build APIs and CLI tools',
+      'Automation and utility scripts',
+      'Work with common data libs',
+      'Virtualenv and dependency control',
     ]
   },
   {
     icon: './icons/shell.svg', label: 'Shell scripting', bullets: [
-      'Provisioning and setup scripts for environments',
-      'Automating repetitive maintenance tasks',
-      'Custom log filtering and parsing',
-      'Quick diagnostics and fixes with one-liners',
+      'Setup scripts for environments',
+      'Automate routine maintenance',
+      'Manage services and processes',
+      'Quick fixes with one-liners',
     ]
   },
   {
-    icon: './icons/yaml.svg', label: 'Yaml', bullets: [
-      'Define app and service configurations',
-      'Writing declarative CI/CD pipeline files',
-      'Reusable configuration blocks across projects',
-      'Version-control infrastructure manifests',
+    icon: './icons/yaml.svg', label: 'YAML', bullets: [
+      'App and service configs',
+      'Declarative CI/CD files',
+      'Reusable config blocks',
+      'Structured documentation of setups',
     ]
   },
   {
     icon: './icons/html5.svg', label: 'HTML', bullets: [
-      'Semantic page structures',
-      'Accessible forms and inputs',
-      'Tables and data presentation',
-      'Media embedding and integration',
-    ]
-
+      'Semantic structures',
+      'Accessible forms',
+      'Data tables',
+      'Media embeding',
+    ],
   },
   {
     icon: './icons/css3.svg', label: 'CSS', bullets: [
-      'Responsive layouts with flexbox/grid',
-      'Reusable utility classes',
-      'Consistent theming with variables',
-      'Smooth transitions and hover effects',
+      'Responsive layouts',
+      'Utility classes',
+      'Theme variables',
+      'Transitions and effects',
     ]
-
   },
   {
     icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
-      'Documentation and blog setup',
-      'Versioned content management',
-      'Custom MDX components',
-      'Optimized builds and deployments',
+      'Responsive sites and docs',
+      'Structured content',
+      'Custom layouts',
+      'Optimized static deploys',
     ]
   },
 ];
