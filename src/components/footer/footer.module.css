@@ -20,26 +20,33 @@
   display: grid;
   place-items: center;
   line-height: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.backToTop:focus-visible {
+  outline: 2px solid #9fb3c8;
+  outline-offset: 4px;
 }
 
 .copy {
   margin: 0;
   font-family: Quicksand;
   font-weight: 400;
-  font-style: Regular;
+  font-style: normal;
   font-size: 16px;
   line-height: 120%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   padding-bottom: 16px;
 }
 
 .legal {
   font-family: Quicksand;
   font-weight: 400;
-  font-style: Regular;
+  font-style: normal;
   font-size: 16px;
   line-height: 120%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   color: #ffffff;
   text-decoration: none;
   padding-bottom: 32px;
@@ -56,25 +63,30 @@
   inset: 0;
   width: 40px;
   height: 90px;
-  opacity: 1;
   transition: opacity 150ms ease;
   pointer-events: none;
+}
+
+
+.backToTop .icon {
+  opacity: 1;
 }
 
 .backToTop .iconHover {
   opacity: 0;
 }
 
-.backToTop:hover .icon {
-  opacity: 1;
+.backToTop:hover .icon,
+.backToTop:focus-visible .icon {
+  opacity: 0;
 }
 
-.backToTop:hover .iconHover {
+.backToTop:hover .iconHover,
+.backToTop:focus-visible .iconHover {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
-
   .backToTop {
     height: 73px;
   }
@@ -84,12 +96,8 @@
     height: 73px;
   }
 
-  .copy {
-    font-size: 14px;
-  }
-
+  .copy,
   .legal {
     font-size: 14px;
   }
-
 }
