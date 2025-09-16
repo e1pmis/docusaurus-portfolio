@@ -77,8 +77,7 @@
 }
 
 
-.backToTop:hover .iconHover,
-.backToTop:focus-visible .iconHover {
+.backToTop:hover .iconHover {
   opacity: 1;
 }
 
