@@ -1,9 +1,8 @@
-/* ===== Desktop header ===== */
 .header {
   position: relative;
   background: #266AD9;
-  padding: 0 6vw;
-  padding-top: 2vw;
+  padding: 0 10vw;
+  padding-top: 0vw;
   z-index: 100;
   transition: transform 200ms ease;
   will-change: transform;
@@ -20,7 +19,6 @@
 .reveal {
   transform: translateY(0);
 }
-
 
 .inner {
   min-height: 0;
@@ -117,6 +115,10 @@
 }
 
 @media (max-width:750px) {
+  .header {
+    padding: 0 6vw;
+    padding-top: 2vw;
+  }
 
   .menu {
     display: none;
