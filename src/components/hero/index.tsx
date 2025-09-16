@@ -21,9 +21,9 @@ export default function Hero(): JSX.Element {
           </div>
 
           <p className={styles.blurb}>
-            I build secure, scalable systems using containers, orchestration, and infrastructure as code. My focus is smooth, reliable deployments and CI/CD pipelines that balance speed with safety. <br /> 
-            <br />With an M.Sc. in IT, I combine technical depth, strong analytical ability, and continuous learning to deliver secure and robust system architectures.
-             </p>
+            I design and deliver secure, scalable systems that take projects from concept to production-ready environments. I work across cloud platforms, virtualization, and infrastructure as code, automating workflows to reduce complexity and streamline delivery. This includes building CI/CD pipelines that balance speed with safety, enabling predictable and repeatable deployments. <br />
+            <br />Backed by an M.Sc. in IT, strong analytical ability, and a commitment to continuous learning, I focus on creating architectures that are robust today and adaptable for tomorrow.
+          </p>
 
           <a href="#contact" className={styles.cta}>Contact me</a>
         </div>
