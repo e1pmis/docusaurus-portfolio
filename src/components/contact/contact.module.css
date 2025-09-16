@@ -1,7 +1,7 @@
 .contact {
   background-color: #262E34;
   color: white;
-  padding: 0 6vw;
+  padding: 0 10vw;
   padding-top: 80px;
 }
 
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: clamp(30px, 14vw, 400px);
+  gap: clamp(30px, 22vw, 600px);
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -36,24 +36,31 @@
   text-align: left;
 }
 
-.list {
-  list-style-type: disc;
-  padding-left: 1.2rem;
-  line-height: 1.6;
+.offer {
   font-family: Quicksand;
   font-weight: 400;
   font-style: Regular;
   font-size: 18px;
   line-height: 120%;
   letter-spacing: 0%;
+}
 
+.list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  font-family: Quicksand;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
 }
 
 .subtitle {
   font-family: Quicksand;
   font-weight: 500;
   font-style: Medium;
-  font-size:clamp(18px,2.2vw,24px);
+  font-size: clamp(18px, 2.2vw, 24px);
   line-height: 120%;
   letter-spacing: 0%;
   padding-bottom: 20px;
@@ -132,6 +139,13 @@
 }
 
 @media (max-width: 768px) {
+  .contact {
+    background-color: #262E34;
+    color: white;
+    padding: 0 6vw;
+    padding-top: 80px;
+  }
+
   .container {
     flex-direction: column;
     gap: 30px;
