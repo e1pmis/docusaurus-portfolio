@@ -68,17 +68,14 @@
 }
 
 
-.backToTop .icon {
-  opacity: 1;
-}
 
 .backToTop .iconHover {
-  opacity: 0;
+  display: none;
 }
 
 
 .backToTop:hover .iconHover {
-  opacity: 1;
+  display: initial;
 }
 
 @media (max-width: 768px) {
