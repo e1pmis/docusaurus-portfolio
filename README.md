@@ -1,10 +1,10 @@
 # Docusaurus Portfolio
 
-This repository hosts a **Docusaurus-based portfolio and blog**.  
+This repository hosts a **Docusaurus-based portfolio**.  
 It is structured into multiple sections (Header, Hero, My Skills, My Project Highlights, Contact, and Footer). Each section is implemented as a React component in `src/components` and combined into a single layout in `src/pages/index.tsx`, while global configuration such as site metadata, navigation, and deployment settings is maintained in `docusaurus.config.ts`.  
 With continuous integration and deployment workflows are managed in `.github/workflows`.
 
-The goal of this project is to **build and deploy a static website** that serves as a personal portfolio and blog.  
+The goal of this project is to **build and deploy a static website** that serves as a personal portfolio.  
 The static build provides fast performance, simple hosting via GitHub Pages, and a reliable deployment process that ensures consistent results across environments.
 
 
