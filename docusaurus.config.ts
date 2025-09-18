@@ -5,9 +5,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Abdullah Alibrahim',
+  tagline: 'Software Development & Cloud Systems | DevSecOps • Automation • Testing | M.Sc. Electrical Engineering & IT',
+  favicon: 'img/portfolio.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://e1pmiS.github.io",
+  url: "https://e1pmis.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'a.alibrahim', // Usually your GitHub org/user name.
+  projectName: 'docusaurus-portfolio', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -50,7 +50,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-  image: 'img/docusaurus-social-card.jpg',
+  image: 'img/logo.jpeg',
   navbar: {
     hideOnScroll: true,
     items: [],
