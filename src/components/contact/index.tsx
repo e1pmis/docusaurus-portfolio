@@ -32,7 +32,7 @@ export default function Contact(): JSX.Element {
               <li>
                 <a
                   className={styles.row}
-                  href="www.linkedin.com/in/alibrahimabdullah"
+                  href="https://www.linkedin.com/in/alibrahimabdullah"
                   target="_blank" rel="noreferrer"
                   aria-label="LinkedIn"
                 >
