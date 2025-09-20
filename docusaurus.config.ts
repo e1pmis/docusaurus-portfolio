@@ -42,7 +42,7 @@ const config: Config = {
       {
         docs: {
           routeBasePath: 'docs',
-          sidebarPath: undefined,
+          sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: false,
         theme: {
