@@ -27,7 +27,7 @@ const PROJECTS: Project[] = [
       `Conduit Container is my approach to deploying full-stack applications securely and consistently.\n
       Both frontend and backend run as Docker services, managed by a  CI/CD pipeline that handles builds, releases, and deployments.\n
       The outcome is fewer manual steps, reduced errors, and faster delivery, reflecting my DevSecOps approach of combining automation with stability.`,
-    docUrl: 'https://github.com/e1pmiS/conduit-container/blob/main/README.md',
+    docUrl: 'docs/conduit-container',
     githubUrl: 'https://github.com/e1pmiS/conduit-container',
   },
   {
@@ -43,7 +43,7 @@ const PROJECTS: Project[] = [
       `Juice Shop Meister is a security project where I documented and demonstrated vulnerabilities in OWASP Juice Shop.\n
       I paired technical write-ups with video walkthroughs to explain how exploits work and why they matter.\n
       Each exercise strengthened my ability to think like both attacker and defender while communicating risk clearly, turning complex exploits into accessible knowledge.`,
-    docUrl: 'https://github.com/e1pmiS/Juice_Shop_Meister/blob/main/README.md',
+    docUrl: 'docs/juice-shop',
     githubUrl: 'https://github.com/e1pmiS/Juice_Shop_Meister',
   },
   {
@@ -60,7 +60,7 @@ const PROJECTS: Project[] = [
       `The Minecraft Server project delivers a lightweight Docker Compose setup for hosting a game server with persistence for world data, configuration, and logs.\n
       This ensures the server can restart or update without data loss, while core settings are managed through environment variables, and upgrades could applied by swapping the server JAR.\n
       The project reflects my focus on building practical, maintainable solutions through clean containerization practices.`,
-    docUrl: 'https://github.com/e1pmiS/minecraft-server/blob/review/README.md',
+    docUrl: 'docs/minecraft-server',
     githubUrl: 'https://github.com/e1pmiS/minecraft-server',
   },
   {
@@ -77,7 +77,7 @@ const PROJECTS: Project[] = [
       `A streamlined Docker Compose setup for Word-Press and MySQL using official images.\n 
       Persistent volumes keep data safe across restarts, and env-based configuration keeps secrets out of source control, while Word-Press spins up after the database is ready, ensuring reliable startup.\n
       This project was my way of turning a heavy CMS and database setup into a clean, stable, production-ready stack.`,
-    docUrl: 'https://github.com/e1pmiS/WordPress-Docker-Project/blob/main/README.md',
+    docUrl: 'docs/Word-press',
     githubUrl: 'https://github.com/e1pmiS/WordPress-Docker-Project',
   },
   {
@@ -94,7 +94,7 @@ const PROJECTS: Project[] = [
       `A Django-based e-commerce backend containerized with Docker and PostgreSQL.\n
       Services communicate over a dedicated Docker network, with configs and secrets managed through .env files. Includes superuser creation and product management via Django’s admin, making it usable from the start.\n
       This project showed me how clean containerization and secure configs can turn backend deployments into something practical and dependable.`,
-    docUrl: 'https://github.com/e1pmiS/truck_signs_api/blob/main/README.md',
+    docUrl: 'docs/truck-signs-api',
     githubUrl: 'https://github.com/e1pmiS/truck_signs_api',
   },
   {
@@ -110,7 +110,7 @@ const PROJECTS: Project[] = [
       `A Django-based shop packaged into a containerized service with a custom Dockerfile to control the Python environment and dependencies.\n
       The setup can be launched, managed, and updated without breaking consistency, making it easy to run in different environments.\n
       This project gave me hands-on experience with how containerization can turn web apps into consistent, production-ready services.`,
-    docUrl: 'https://github.com/e1pmiS/baby-tools-shop/blob/main/README.md',
+    docUrl: 'docs/baby-tools-shop',
     githubUrl: 'https://github.com/e1pmiS/baby-tools-shop',
   },
 ];
