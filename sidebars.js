@@ -4,6 +4,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Projects',
+      link: { type: 'doc', id: 'projects-index' },
       collapsible: true,
       collapsed: false,
       items: [
