@@ -43,7 +43,7 @@ const PROJECTS: Project[] = [
       `Juice Shop Meister is a security project where I documented and demonstrated vulnerabilities in OWASP Juice Shop.\n
       I paired technical write-ups with video walkthroughs to explain how exploits work and why they matter.\n
       Each exercise strengthened my ability to think like both attacker and defender while communicating risk clearly, turning complex exploits into accessible knowledge.`,
-    docUrl: 'docs/juice-shop',
+    docUrl: 'docs/owasp-juice-shop',
     githubUrl: 'https://github.com/e1pmiS/Juice_Shop_Meister',
   },
   {
