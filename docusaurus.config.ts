@@ -40,7 +40,10 @@ const config: Config = {
     [
       'classic',
       {
-        docs: false,
+        docs: {
+          routeBasePath: 'docs',
+          sidebarPath: undefined,
+        },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -50,19 +53,21 @@ const config: Config = {
   ],
 
   themeConfig: {
-  image: 'img/logo.jpeg',
-  navbar: {
-    hideOnScroll: true,
-    items: [],
-  },
-footer: undefined,
-  colorMode: {
-    disableSwitch: true,
-  },
-  prism: {
-    theme: prismThemes.github,
-    darkTheme: prismThemes.dracula,
-  },
+    image: 'img/logo.jpeg',
+    navbar: {
+      hideOnScroll: true,
+      items: [],
+    },
+    footer: undefined,
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
 
   } satisfies Preset.ThemeConfig,
 };
