@@ -56,24 +56,24 @@ const skills: Skill[] = [
     icon: './icons/html5.svg', label: 'HTML', bullets: [
       'Semantic structures',
       'Accessible forms',
-      'Data tables',
+      'Organized data tables',
       'Media embeding',
     ],
   },
   {
     icon: './icons/css3.svg', label: 'CSS', bullets: [
-      'Responsive layouts',
-      'Utility classes',
-      'Theme variables',
+      'Adaptive layouts',
+      'Performance-optimized styles',
+      'Reusable design patterns',
       'Transitions and effects',
     ]
   },
   {
     icon: './icons/docusaurus.svg', label: 'Static site generator', bullets: [
-      'Responsive sites and docs',
-      'Structured content',
-      'Custom layouts',
-      'Optimized static deploys',
+      'Static site generation',
+      'Built-in docs and blog',
+      'React-based customization',
+      'Markdown-driven content',
     ]
   },
 ];
