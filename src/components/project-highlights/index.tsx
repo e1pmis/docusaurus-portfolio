@@ -65,7 +65,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 'wordpress',
-    name: 'Word-Press hosting',
+    name: 'Word-Press',
     image: './img/projects/wordpress.png',
     tags: [
       { icon: './icons/docker_b.svg', label: 'Docker' },
