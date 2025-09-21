@@ -197,7 +197,7 @@ export default function Header(): JSX.Element {
           {/* desktop languages */}
           <div className={`${styles.lang} ${styles.langBar}`}>
             <button type="button" className={`${styles.langBtn} ${styles.langActive}`}>EN</button>
-            <button type="button" className={styles.langBtn}>DE</button>
+            {/* <button type="button" className={styles.langBtn}>DE</button> */}
           </div>
         </div>
       </header>
@@ -225,7 +225,7 @@ export default function Header(): JSX.Element {
 
           <div className={`${styles.lang} ${styles.langMenu}`}>
             <button type="button" className={`${styles.langBtnMobile} ${styles.langActiveMobile}`}>EN</button>
-            <button type="button" className={styles.langBtnMobile}>DE</button>
+            {/* <button type="button" className={styles.langBtnMobile}>DE</button> */}
           </div>
         </div>
       </nav>
