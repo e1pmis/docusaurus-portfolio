@@ -1,6 +1,6 @@
 # Baby Tools Shop - Docker setup
 
-This guide walks you through the steps required to containerize a Django application using Docker. It covers setting up the Docker environment, writing the Dockerfile, building the image, and running the container.
+This guide walks you through the steps required to containerize a Django application using Docker. It covers setting up the Docker environment, writing Dockerfile, building the image, and running the container.
 
 ---
 
@@ -11,11 +11,11 @@ This guide walks you through the steps required to containerize a Django applica
   - [Prerequisites](#prerequisites)
   - [Quickstart](#quickstart)
   - [Usage](#usage)
-    - [3.1 Creating a Django Superuser](#31-creating-a-django-superuser)
-    - [3.2 Logging into Django Admin and Managing Products](#32-logging-into-django-admin-and-managing-products)
-    - [3.3 External Deployment](#33-external-deployment)
+    - [Creating a Django Superuser](#creating-a-django-superuser)
+    - [Logging into Django Admin and Managing Products](#logging-into-django-admin-and-managing-products)
+    - [External Deployment](#external-deployment)
   - [Explanation](#explanation)
-    - [4.1 Dockerfile Setup](#41-dockerfile-setup)
+    - [Dockerfile Setup](#dockerfile-setup)
 
 ---
 
@@ -51,7 +51,7 @@ After Step 3, the Baby Tools Shop Django application will be running inside a Do
 
 ## Usage
 
-### 3.1 Creating a Django Superuser
+### Creating a Django Superuser
 
 To manage products and categories on the admin interface, you need a Django superuser.
 
@@ -75,7 +75,7 @@ python3 manage.py createsuperuser
 ```
 Follow the prompt and once complete, a superuser account will be created in the database.
 
-### 3.2 Logging into Django Admin and Managing Products
+### Logging into Django Admin and Managing Products
 
 After creating a superuser, you can log in and start managing your shop.
 
@@ -95,7 +95,7 @@ http://localhost:8025/admin
 
 * Edit or delete existing items
 
-### 3.3 External Deployment
+### External Deployment
 
 To publish the server externally, you need to configure Django to allow requests from your external IP address or domain.
 
@@ -111,7 +111,7 @@ This section explains how to create a Dockerfile to containerize a Django applic
 
 ---
 
-### 4.1 Dockerfile Setup
+### Dockerfile Setup
 
 Create a file named `Dockerfile` in the root directory.
 

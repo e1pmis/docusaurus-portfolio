@@ -1,6 +1,6 @@
 # Truck Signs API - Docker setup
 
-This guide explains how the Truck Sign Shop application is containerised and run alongside a PostgreSQL database using Docker only. Each service runs in its own container, and communication is handled via a cutom Docker network.
+This guide explains how the Truck Sign Shop Django application is containerised and run alongside a PostgreSQL database using Docker only. Each service runs in its own container, and communication is handled via a cutom Docker network.
 
 ---
 
@@ -47,10 +47,10 @@ When running your containers, attach them to this network using the --network op
 
 3. Set Up Environment Variables
 
-The project uses environment variables for configuration. A sample file simple_env_config.env is provided. Copy the sample file to create your own .env file:
+The project uses environment variables for configuration. A example file example.env is provided. Copy the sample file to create your own .env file:
 
 ```bash
-cp truck_signs_designs/settings/simple_env_config.env truck_signs_designs/settings/.env
+cp example.env .env
 ```
 then open the .env file and update any variables as needed, such as database credentials or your Django SECRET_KEY.
 
@@ -117,7 +117,7 @@ you can log in and start managing the shop.
 1. Open your browser and go to:
 
 ```bash
-http://<your_ip>:8020/admin
+http://<host_ip>:8020/admin
 ```
 
 2. Log in using the superuser credentials you just created.

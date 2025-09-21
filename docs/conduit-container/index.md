@@ -1,6 +1,6 @@
 # Conduit Container
 
-**Goal:** run the **Conduit (RealWorld)** app end-to-end locally or on a VM with a reproducible Docker setup and a single CI/CD workflow that builds, publishes, and deploys images.
+**Goal:** run the **Conduit (RealWorld)** app end-to-end locally or on a VM with a reproducible Docker setup and an CI/CD workflow that builds, publishes, and deploys images.
 
 **backend/** — Django REST API (production)
 - RealWorld API: auth (JWT), profiles, follow/unfollow, articles CRUD, comments, favorites, tags.
@@ -47,7 +47,7 @@
 
 ## Quickstart
 
-1- Clone and pull submodules
+1. Clone and pull submodules
 
 ```bash
 git clone https://github.com/e1pmiS/conduit-container.git
@@ -55,20 +55,20 @@ cd conduit-container
 git submodule update --init --recursive
 ```
 
-2- Prepare env
+2. Prepare env
 edit .env and set DJANGO_SECRET_KEY and other values
 
 ```bash
 cp example.env .env
 ```
 
-3- Start (uses public GHCR images, no build)
+3. Start (uses public GHCR images, no build)
 ```bash
 docker compose pull
 docker compose up -d
 ```
 
-4- Verify
+4. Verify
 ```bash
 docker compose ps
 curl -sSf http://127.0.0.1:8000/api/tags/ >/dev/null && echo "API ok"

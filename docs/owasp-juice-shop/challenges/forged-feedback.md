@@ -70,3 +70,5 @@ No session validation or ownership check is enforced—feedback gets recorded un
 
 - This is a classic example of **horizontal privilege escalation** via ID tampering.
 - No CAPTCHA validation is bypassed in this case—the challenge lies in the broken access control, not anti-bot.
+
+---

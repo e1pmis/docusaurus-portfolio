@@ -33,34 +33,42 @@ A lightweight, reproducible Docker + Docker Compose setup for running a **vanil
 
 ## Requirements
 
-| Requirement                                                     | Minimum version | Notes                                                                                        |
-| --------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------------------- |
-| Docker                                                          |  20.x CE / EE   | with BuildKit recommended                                                                    |
-| Docker Compose                                                  |  v2.5+          | uses `docker compose` CLI                                                                    |
-| Minecraft server JAR                                            | 1.20+           | place in project root as \`minecraft\_server.jar    # Official server binary (not committed) |
+| Requirement          | Minimum version | Notes                                                                                        |
+| -------------------- | --------------- | -------------------------------------------------------------------------------------------- |
+| Docker               | 20.x CE / EE    | with BuildKit recommended                                                                    |
+| Docker Compose       | v2.5+           | uses `docker compose` CLI                                                                    |
+| Minecraft server JAR | 1.20+           | place in project root as \`minecraft\_server.jar    # Official server binary (not committed) |
 
 ---
 
 ## Quick Start
 
-> **Prerequisites:** Docker installed and either the classic **docker‑compose** binary or the newer **Compose v2** plugin (makes `docker compose` available).
+1. Clone or create the project folder
+```bash
+git clone https://github.com/e1pmiS/minecraft-server-.git minecraft-server && cd minecraft-server
+```
+
+2. Download the server JAR (replace hash with the real one)
 
 ```bash
-# 1 – Clone or create the project folder
-git clone https://github.com/e1pmiS/minecraft-server-.git minecraft-server && cd minecraft-server
+curl -o minecraft_server.jar \ 
+https://launcher.mojang.com/v1/objects/<hash>/server.jar
+```
 
-# 2 – Download the server JAR (replace <hash> with the real one)
-curl -o minecraft_server.jar \
-  https://launcher.mojang.com/v1/objects/<hash>/server.jar
+3. Create a .dockerignore so world data never enters the build context
 
-# 3 – Create a .dockerignore so world data never enters the build context
-#    (crucial: avoids permission errors & speeds up builds)
+```bash
 echo "data" > .dockerignore
+```
 
-# ---------------- Build & Run ----------------
+4. Build & Run
+   
+```bash
 docker-compose build        # build the image
 docker-compose up -d        # start detached
 ```
+
+
 
 When you see `Done (xx.xx s)! For help, type "help"`, connect from your Minecraft client using the host’s IP (default port **25565**).
 

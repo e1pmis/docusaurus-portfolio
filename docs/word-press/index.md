@@ -109,5 +109,4 @@ docker-compose down      # add -v to drop anonymous volumes
 ```bash
 docker-compose pull && docker-compose up -d
 ```
-
 ---

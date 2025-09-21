@@ -83,3 +83,5 @@ This works even if the product was created via the UI—only the API needs to be
 * This challenge does not require creating a new product.
 * The XSS vector only works if injected via the API—not the web UI.
 * Editing existing objects via vulnerable API endpoints is a common real-world attack technique.
+
+---

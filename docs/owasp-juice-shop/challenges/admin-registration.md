@@ -74,3 +74,5 @@ By injecting `"role": "admin"` into the registration payload, an attacker can se
 
 - No login session or admin approval is needed, the role is injected during signup.
 - This is a textbook **privilege escalation** due to lack of backend validation.
+
+---
