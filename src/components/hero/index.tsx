@@ -7,7 +7,7 @@ export default function Hero(): JSX.Element {
 
       <div className={styles.grid}>
         <div className={styles.textCol}>
-          <div className={styles.kicker}>Hey there 👋🏼 , I am</div>
+          <div className={styles.kicker}>Glad you’re here!, I am</div>
           <h1 className={styles.name}>Abdullah Alibrahim</h1>
           <div className={styles.role}>Security Operations Engineer</div>
 
