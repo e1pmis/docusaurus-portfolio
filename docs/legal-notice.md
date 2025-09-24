@@ -1,11 +1,14 @@
 ---
 id: legal-notice
-title: Legal Notice / Impressum
+title: Legal notice 
 ---
 
 
-Owner: **Abdullah Alibrahim**  
-Address: Schückstraße 4, 76131 Karlsruhe, Germany  
+**Abdullah Alibrahim**  
+Schückstraße 4,  
+76131 Karlsruhe,  
+Germany 
+ 
 Tel: +49 1520 2034032  
 Email: [alibrahimabdullah@gmx.de](mailto:alibrahimabdullah@gmx.de)  
 
