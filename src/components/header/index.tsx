@@ -14,11 +14,11 @@ const SHOW_DELTA = 24;   // scroll up at least this much to show
 const HIDE_DELTA = 56;   // scroll down at least this much to hide
 
 export default function Header(): JSX.Element {
-  const [affixed, setAffixed] = useState(false);
-  const [reveal, setReveal] = useState(false);
-  const [activeId, setActiveId] = useState<string>(LINKS[0].id);
-  const [headerH, setHeaderH] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [IsAffixed, setIsAffixed] = useState(false);
+  const [IsReveal, setIsReveal] = useState(false);
+  const [IsActiveId, setIsActiveId] = useState<string>(LINKS[0].id);
+  const [IsheaderH, setIsHeaderH] = useState(0);
+  const [IsMenuOpen, setIsMenuOpen] = useState(false);
 
   const el = useRef<HTMLElement>(null);
   const lastY = useRef(0);
@@ -31,7 +31,7 @@ export default function Header(): JSX.Element {
 
   const refreshMeasurements = () => {
     // header height
-    setHeaderH(el.current ? el.current.getBoundingClientRect().height : 0);
+    setIsHeaderH(el.current ? el.current.getBoundingClientRect().height : 0);
 
     // section tops in document coordinates
     sections.current = LINKS.map(l => {
@@ -52,12 +52,12 @@ export default function Header(): JSX.Element {
     const docH = document.documentElement.scrollHeight;
     const vh = window.innerHeight;
     if (y + vh >= docH - 2) {
-      setActiveId(sections.current[sections.current.length - 1].id);
+      setIsActiveId(sections.current[sections.current.length - 1].id);
       return;
     }
 
     // line just under fixed header
-    const line = y + headerH + 8;
+    const line = y + IsheaderH + 8;
 
     // binary search for greatest top <= line
     let lo = 0, hi = sections.current.length - 1, ans = 0;
@@ -67,7 +67,7 @@ export default function Header(): JSX.Element {
         ans = mid; lo = mid + 1;
       } else hi = mid - 1;
     }
-    setActiveId(sections.current[ans].id);
+    setIsActiveId(sections.current[ans].id);
   };
 
   useEffect(() => {
@@ -89,8 +89,8 @@ export default function Header(): JSX.Element {
       // affix threshold
       const nowAffixed = y > REVEAL_AT;
       if (!nowAffixed) {
-        setAffixed(false);
-        setReveal(false);
+        setIsAffixed(false);
+        setIsReveal(false);
         dir.current = null;
         downPeak.current = y;
         upValley.current = y;
@@ -98,7 +98,7 @@ export default function Header(): JSX.Element {
         setActiveFromScroll(y);
         return;
       }
-      setAffixed(true);
+      setIsAffixed(true);
 
       // hysteresis for reveal/hide to avoid flicker
       if (dir.current === null) {
@@ -112,8 +112,8 @@ export default function Header(): JSX.Element {
           dir.current = 'up';
           upValley.current = y;
         }
-        if (!reveal && downPeak.current - y >= SHOW_DELTA) {
-          setReveal(true);
+        if (!IsReveal && downPeak.current - y >= SHOW_DELTA) {
+          setIsReveal(true);
         }
         // track valley
         if (y < upValley.current) upValley.current = y;
@@ -122,8 +122,8 @@ export default function Header(): JSX.Element {
           dir.current = 'down';
           downPeak.current = y;
         }
-        if (reveal && y - upValley.current >= HIDE_DELTA) {
-          setReveal(false);
+        if (IsReveal && y - upValley.current >= HIDE_DELTA) {
+          setIsReveal(false);
         }
         // track peak
         if (y > downPeak.current) downPeak.current = y;
@@ -142,27 +142,27 @@ export default function Header(): JSX.Element {
       window.removeEventListener('load', refreshMeasurements);
       window.removeEventListener('scroll', onScroll);
     };
-  }, [headerH, reveal]);
+  }, [IsheaderH, IsReveal]);
 
   const smoothTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById(id);
     if (!target) return;
-    const top = target.getBoundingClientRect().top + window.scrollY - (affixed ? headerH : 0);
+    const top = target.getBoundingClientRect().top + window.scrollY - (IsAffixed ? IsheaderH : 0);
     window.scrollTo({ top, behavior: 'smooth' });
-    setMenuOpen(false);
+    setIsMenuOpen(false);
   };
 
   return (
     <>
-      {affixed ? <div style={{ height: headerH }} /> : null}
+      {IsAffixed ? <div style={{ height: IsheaderH }} /> : null}
 
       <header
         ref={el}
         className={[
           styles.header,
-          affixed ? styles.affixed : '',
-          affixed && reveal ? styles.reveal : '',
+          IsAffixed ? styles.affixed : '',
+          IsAffixed && IsReveal ? styles.reveal : '',
         ].join(' ')}
       >
         <div className={styles.inner}>
@@ -176,8 +176,8 @@ export default function Header(): JSX.Element {
                     <a
                       href={`#${l.id}`}
                       onClick={smoothTo(l.id)}
-                      className={`${styles.link} ${activeId === l.id ? styles.activeLink : ''}`}
-                      aria-current={activeId === l.id ? 'page' : undefined}
+                      className={`${styles.link} ${IsActiveId === l.id ? styles.activeLink : ''}`}
+                      aria-current={IsActiveId === l.id ? 'page' : undefined}
                     >
                       {l.label}
                     </a>
@@ -198,10 +198,10 @@ export default function Header(): JSX.Element {
           {/* mobile toggle */}
           <button
             className={styles.menuToggle}
-            aria-expanded={menuOpen}
+            aria-expanded={IsMenuOpen}
             aria-controls="mobileMenu"
             aria-label="Open menu"
-            onClick={() => setMenuOpen(true)}
+            onClick={() => setIsMenuOpen(true)}
           >
             <span /><span /><span />
           </button>
@@ -218,11 +218,11 @@ export default function Header(): JSX.Element {
       <nav
         id="mobileMenu"
         className={styles.mobileMenu}
-        data-open={menuOpen || undefined}
-        aria-hidden={!menuOpen}
+        data-open={IsMenuOpen || undefined}
+        aria-hidden={!IsMenuOpen}
       >
         <div className={styles.mobileMenuInner}>
-          <button className={styles.closeBtn} onClick={() => setMenuOpen(false)} aria-label="Close">×</button>
+          <button className={styles.closeBtn} onClick={() => setIsMenuOpen(false)} aria-label="Close">×</button>
 
           <ul className={styles.menuStack} role="menu">
             {LINKS.map((l) => (
@@ -241,7 +241,7 @@ export default function Header(): JSX.Element {
                     className={styles.menuLink}
                     role="menuitem"
                     href={l.url}
-                    onClick={() => setMenuOpen(false)} // close mobile menu after click
+                    onClick={() => setIsMenuOpen(false)} // close mobile menu after click
                   >
                     {l.label}
                   </a>
