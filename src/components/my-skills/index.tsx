@@ -79,18 +79,18 @@ const skills: Skill[] = [
 ];
 
 function Card({ icon, label, bullets }: Skill): JSX.Element {
-  const [open, setOpen] = useState(false);
+  const [IsOpen, setIsOpen] = useState(false);
   return (
     <article
       className={styles.card}
-      data-open={open ? 'true' : 'false'}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      onClick={() => setOpen(v => !v)}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setOpen(v => !v)}
+      data-open={IsOpen ? 'true' : 'false'}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+      onClick={() => setIsOpen(v => !v)}
+      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsOpen(v => !v)}
       role="button"
       tabIndex={0}
-      aria-pressed={open}
+      aria-pressed={IsOpen}
     >
       <div className={`${styles.panel} ${styles.front}`}>
         <img className={styles.icon} src={icon} alt={label} />
@@ -150,8 +150,7 @@ export default function MySkills(): JSX.Element {
         <div className={styles.wrap}>
           <header className={styles.headline}>
             <h2 className={styles.title}>My skills</h2>
-            <p className={styles.subtitle}>
-              Where I aplyed my skills            </p>
+            <p className={styles.subtitle}> Where I applied my skills</p>
           </header>
 
           <div ref={contentRef} className={styles.content}>
