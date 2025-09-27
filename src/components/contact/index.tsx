@@ -10,9 +10,9 @@ export default function Contact(): JSX.Element {
             <h2 className={styles.title}>Contact me</h2>
             <p className={styles.offer}>Let’s connect, here’s what I’m looking for and what I can offer:</p>
             <ul className={styles.list}>
-              <li> Open to opportunities in DevSecOps, Cloud, Software/Hardware Engineering roles</li>
-              <li>Take complex projects from concept through implementation, optimization, and validation</li>
-              <li>Bring strong analytical skills, learn quickly, and collaborate effectively in team environments</li>
+              <li>Open to Cloud/Software/Hardware Engineering roles</li>
+              <li>Skilled in end-to-end project execution and optimization</li>
+              <li>Bring strong analytical, fast-learning, and teamwork abilities</li>
               <li>Open to remote work and relocation</li>
             </ul>
           </div>
