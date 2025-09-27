@@ -71,13 +71,12 @@
 }
 
 .langBtn {
-
   padding: .25rem .5rem;
   border-radius: .3rem;
   border: 0;
   background: transparent;
   color: #fff;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-family: Quicksand;
   font-weight: 500;
   font-style: Medium;
