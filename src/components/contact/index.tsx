@@ -26,7 +26,7 @@ export default function Contact(): JSX.Element {
                     <img className={styles.icon} src="./icons/mail.svg" alt="" />
                     <img className={styles.iconHover} src="./icons/mail_hover.svg" alt="" />
                   </span>
-                  <span>alibrahimabdullah@gmx.de</span>
+                  <span>E-Mail</span>
                 </a>
               </li>
               <li>
@@ -40,7 +40,21 @@ export default function Contact(): JSX.Element {
                     <img className={styles.icon} src="./icons/linkedin.svg" alt="" />
                     <img className={styles.iconHover} src="./icons/linkedin_hover.svg" alt="" />
                   </span>
-                  <span>LinkedIn Profile Page</span>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={styles.row}
+                  href="https://github.com/e1pmis"
+                  target="_blank" rel="noreferrer"
+                  aria-label="GitHub"
+                >
+                  <span className={styles.iconWrap}>
+                    <img className={styles.icon} src="./icons/github.svg" alt="" />
+                    <img className={styles.iconHover} src="./icons/github_hover.svg" alt="" />
+                  </span>
+                  <span>GitHub</span>
                 </a>
               </li>
             </ul>
