@@ -6,6 +6,7 @@ const LINKS = [
   { id: 'my-skills', label: 'My skills' },
   { id: 'project-highlights', label: 'My projects' },
   { id: 'contact', label: 'Contact' },
+  { url: '/docs/projects', label: 'Docs', external: true },
 ];
 
 const REVEAL_AT = 120;   // start fixing header after this
@@ -169,15 +170,26 @@ export default function Header(): JSX.Element {
           <nav className={styles.menu} aria-label="Primary">
             <ul className={styles.navList}>
               {LINKS.map((l) => (
-                <li key={l.id}>
-                  <a
-                    href={`#${l.id}`}
-                    onClick={smoothTo(l.id)}
-                    className={`${styles.link} ${activeId === l.id ? styles.activeLink : ''}`}
-                    aria-current={activeId === l.id ? 'page' : undefined}
-                  >
-                    {l.label}
-                  </a>
+                <li key={l.label}>
+                  {l.id ? (
+                    // scroll to in-page section
+                    <a
+                      href={`#${l.id}`}
+                      onClick={smoothTo(l.id)}
+                      className={`${styles.link} ${activeId === l.id ? styles.activeLink : ''}`}
+                      aria-current={activeId === l.id ? 'page' : undefined}
+                    >
+                      {l.label}
+                    </a>
+                  ) : (
+                    // normal link (Docs)
+                    <a
+                      href={l.url}
+                      className={styles.link}
+                    >
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -214,11 +226,26 @@ export default function Header(): JSX.Element {
 
           <ul className={styles.menuStack} role="menu">
             {LINKS.map((l) => (
-              <li key={l.id}>
-                {/* desktop-only highlight; mobile stays plain */}
-                <a className={styles.menuLink} role="menuitem" href={`#${l.id}`} onClick={smoothTo(l.id)}>
-                  {l.label}
-                </a>
+              <li key={l.id ?? l.url}>
+                {l.id ? (
+                  <a
+                    className={styles.menuLink}
+                    role="menuitem"
+                    href={`#${l.id}`}
+                    onClick={smoothTo(l.id)}
+                  >
+                    {l.label}
+                  </a>
+                ) : (
+                  <a
+                    className={styles.menuLink}
+                    role="menuitem"
+                    href={l.url}
+                    onClick={() => setMenuOpen(false)} // close mobile menu after click
+                  >
+                    {l.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
