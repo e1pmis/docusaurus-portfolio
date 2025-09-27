@@ -46,6 +46,8 @@
 }
 
 .list {
+  display: flex;
+  flex-direction: column;
   list-style-type: disc;
   padding-left: 1.2rem;
   font-family: Quicksand;
@@ -54,6 +56,7 @@
   font-size: 18px;
   line-height: 130%;
   letter-spacing: 0%;
+  gap: 10px;
 }
 
 .subtitle {
