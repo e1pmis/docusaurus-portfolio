@@ -6,13 +6,13 @@ slug: /projects
 
 # Projects Outline:
 
-- **[Conduit Container](./conduit-container/)**
-- **[OWASP Juice Shop - Main](./owasp-juice-shop/)**
-  - [Admin Registration](./owasp-juice-shop/challenges/admin-registration.md)
-  - [API-only XSS](./owasp-juice-shop/challenges/api-only-xss.md)
-  - [CAPTCHA Bypass](./owasp-juice-shop/challenges/captcha-bypass.md)
-  - [Forged Feedback](./owasp-juice-shop/challenges/forged-feedback.md)
-- **[Minecraft Server](./minecraft-server/)**
-- **[WordPress](./word-press/)**
-- **[Truck Signs API](./truck-signs-api/)**
-- **[Baby Tools Shop](./baby-tools-shop/)**
+- **[Conduit Container](/docs/conduit-container/)**
+- **[OWASP Juice Shop - Main](/docs/owasp-juice-shop/)**
+  - [Admin Registration](/docs/owasp-juice-shop/challenges/admin-registration.md)
+  - [API-only XSS](/docs/owasp-juice-shop/challenges/api-only-xss.md)
+  - [CAPTCHA Bypass](/docs/owasp-juice-shop/challenges/captcha-bypass.md)
+  - [Forged Feedback](/docs/owasp-juice-shop/challenges/forged-feedback.md)
+- **[Minecraft Server](/docs/minecraft-server/)**
+- **[WordPress](/docs/word-press/)**
+- **[Truck Signs API](/docs/truck-signs-api/)**
+- **[Baby Tools Shop](/docs/baby-tools-shop/)**
