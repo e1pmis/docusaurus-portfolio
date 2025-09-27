@@ -1,8 +1,12 @@
 import React, { JSX, useMemo, useState } from 'react';
 import styles from './project-highlights.module.css';
 
-type Tag = { icon: string; label: string };
-type Project = {
+interface Tag {
+  icon: string;
+  label: string;
+}
+
+interface Project {
   id: string;
   name: string;
   image: string;
@@ -10,7 +14,12 @@ type Project = {
   description: string;
   docUrl?: string;
   githubUrl?: string;
-};
+}
+
+interface ProjectCardProps {
+  project: Project;
+  variant: 'desktop' | 'mobile';
+}
 
 const PROJECTS: Project[] = [
   {
@@ -116,13 +125,7 @@ const PROJECTS: Project[] = [
 ];
 
 
-function ProjectCard({
-  project,
-  variant,
-}: {
-  project: Project;
-  variant: 'desktop' | 'mobile';
-}) {
+function ProjectCard({ project, variant }: ProjectCardProps) {
   if (variant === 'desktop') {
     return (
       <article className={styles.card} data-variant="desktop">
@@ -135,10 +138,10 @@ function ProjectCard({
           </div>
           <div className={styles.detailCol}>
             <div className={styles.tags}>
-              {project.tags.map((t) => (
-                <span key={t.label} className={styles.tag}>
-                  <img src={t.icon} alt="" className={styles.tagIcon} />
-                  <span className={styles.tagText}>{t.label}</span>
+              {project.tags.map((tag) => (
+                <span key={tag.label} className={styles.tag}>
+                  <img src={tag.icon} alt="" className={styles.tagIcon} />
+                  <span className={styles.tagText}>{tag.label}</span>
                 </span>
               ))}
             </div>
@@ -169,10 +172,10 @@ function ProjectCard({
       <div className={styles.cardBody}>
         {/* tags -> image -> text -> buttons */}
         <div className={styles.tags}>
-          {project.tags.map((t) => (
-            <span key={t.label} className={styles.tag}>
-              <img src={t.icon} alt="" className={styles.tagIcon} />
-              <span className={styles.tagText}>{t.label}</span>
+          {project.tags.map((tag) => (
+            <span key={tag.label} className={styles.tag}>
+              <img src={tag.icon} alt="" className={styles.tagIcon} />
+              <span className={styles.tagText}>{tag.label}</span>
             </span>
           ))}
         </div>
@@ -198,20 +201,20 @@ function ProjectCard({
 }
 
 export default function ProjectHighlights(): JSX.Element {
-  const [expanded, setExpanded] = useState(false);
-  const [activeId, setActiveId] = useState(PROJECTS[0]?.id);
+  const [IsExpanded, setIsExpanded] = useState(false);
+  const [IsActiveId, setIsActiveId] = useState(PROJECTS[0]?.id);
   const active = useMemo(
-    () => PROJECTS.find((p) => p.id === activeId) ?? PROJECTS[0],
-    [activeId]
+    () => PROJECTS.find((p) => p.id === IsActiveId) ?? PROJECTS[0],
+    [IsActiveId]
   );
 
   const desktopVisible = useMemo(
-    () => (expanded ? PROJECTS : PROJECTS.slice(0, 5)),
-    [expanded]
+    () => (IsExpanded ? PROJECTS : PROJECTS.slice(0, 6)),
+    [IsExpanded]
   );
   const mobileVisible = useMemo(
-    () => (expanded ? PROJECTS : PROJECTS.slice(0, 3)),
-    [expanded]
+    () => (IsExpanded ? PROJECTS : PROJECTS.slice(0, 3)),
+    [IsExpanded]
   );
 
   const listId = 'project-list';
@@ -226,25 +229,25 @@ export default function ProjectHighlights(): JSX.Element {
           <div className={styles.content}>
             <aside className={styles.listCol}>
               <div id={listId} className={styles.list}>
-                {desktopVisible.map((p) => {
-                  const idx = PROJECTS.indexOf(p) + 1;
-                  const isActive = p.id === activeId;
+                {desktopVisible.map((project) => {
+                  const idx = PROJECTS.indexOf(project) + 1;
+                  const isActive = project.id === IsActiveId;
                   return (
                     <button
-                      key={p.id}
+                      key={project.id}
                       type="button"
                       className={`${styles.item} ${isActive ? styles.itemActive : ''}`}
-                      onClick={() => setActiveId(p.id)}
+                      onClick={() => setIsActiveId(project.id)}
                       aria-pressed={isActive}
                     >
                       <span className={`${styles.num} ${isActive ? styles.numActive : ''}`}>{idx}.</span>
-                      <span className={styles.itemLabel}>{p.name}</span>
+                      <span className={styles.itemLabel}>{project.name}</span>
                     </button>
                   );
                 })}
               </div>
 
-              {PROJECTS.length > 5 && (
+              {/* {PROJECTS.length > 5 && (
                 <button
                   type="button"
                   className={styles.seeMore}
@@ -257,7 +260,7 @@ export default function ProjectHighlights(): JSX.Element {
                   </span>
                   <span>{expanded ? 'See fewer projects' : 'See more projects'}</span>
                 </button>
-              )}
+              )} */}
             </aside>
 
             <ProjectCard project={active} variant="desktop" />
@@ -268,15 +271,15 @@ export default function ProjectHighlights(): JSX.Element {
         <div className={styles.mobileOnly}>
           <div className={styles.content}>
             <div className={styles.mobileStack}>
-              {mobileVisible.map((p, i) => {
-                const idx = PROJECTS.indexOf(p) + 1;
+              {mobileVisible.map((project) => {
+                const idx = PROJECTS.indexOf(project) + 1;
                 return (
-                  <div key={p.id} className={styles.mobileGroup}>
+                  <div key={project.id} className={styles.mobileGroup}>
                     <div className={styles.mobileHeader}>
                       <span className={styles.mobileNum}>{idx}.</span>
-                      <span className={styles.itemLabel}>{p.name}</span>
+                      <span className={styles.itemLabel}>{project.name}</span>
                     </div>
-                    <ProjectCard project={p} variant="mobile" />
+                    <ProjectCard project={project} variant="mobile" />
                   </div>
                 );
               })}
@@ -287,10 +290,10 @@ export default function ProjectHighlights(): JSX.Element {
                   <button
                     type="button"
                     className={styles.seeMore}
-                    onClick={() => setExpanded((v) => !v)}
-                    aria-expanded={expanded}
+                    onClick={() => setIsExpanded((v) => !v)}
+                    aria-expanded={IsExpanded}
                   >
-                    <span>{expanded ? 'See fewer projects' : 'See more projects'}</span>
+                    <span>{IsExpanded ? 'See fewer projects' : 'See more projects'}</span>
                   </button>
                 </div>
               )}
