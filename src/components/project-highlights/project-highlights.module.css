@@ -1,0 +1,574 @@
+.section {
+  background: #266AD9;
+  color: #fff;
+  padding: 0 10vw;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 0;
+  gap: 64px;
+}
+
+.title {
+  width: 100%;
+  margin: 0;
+  font-family: 'Quicksand';
+  font-weight: 700;
+  font-style: Bold;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-width: 0;
+  gap: clamp(16px, 4vw, 48px);
+}
+
+/* LEFT: NUMBERED LIST */
+.listCol {
+  order: 0;
+  flex: 0 0 clamp(180px, 20vw, 256px);
+  min-width: clamp(180px, 20vw, 256px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 29px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  font-family: Quicksand;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: left;
+}
+
+.num {
+  min-width: 28px;
+  text-align: right;
+  font-weight: 600;
+  color: #fff;
+  opacity: .9;
+}
+
+.itemLabel {
+  white-space: nowrap;
+}
+
+.itemActive {
+  font-weight: 600;
+  color: #262E34;
+}
+
+.numActive {
+  color: #262E34;
+  opacity: 1;
+}
+
+.seeMore {
+  width: 100%;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 0 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 24px, 24px);
+  line-height: 120%;
+  text-decoration: underline;
+}
+
+.arrowBox {
+  width: 30px;
+  height: 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowImg {
+  width: 20px;
+  height: 19px;
+  display: block;
+  transition: transform .2s ease;
+}
+
+
+.card {
+  flex: 1 1 48rem;
+  background: #2F4563;
+  border-radius: 30px;
+  padding: clamp(20px, 2.5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cardBody {
+  display: flex;
+  align-items: start;
+  column-gap: clamp(16px, 2.5vw, 30px);
+  row-gap: clamp(16px, 2vw, 24px);
+  width: auto;
+  max-width: 100%;
+}
+
+/* left: title + image */
+.leftCol {
+  gap: 16px;
+  min-width: clamp(240px, 28vw, 359px);
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: Quicksand;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: clamp(22px, 2.4vw, 36px);
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #fff;
+  padding-bottom: 22px;
+}
+
+.imageWrap {
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.image {
+  width: clamp(220px, 27vw, 355px);
+  aspect-ratio: 355 / 240;
+  object-fit: cover;
+  display: block;
+}
+
+.detailCol {
+  min-width: 0;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 8px;
+}
+
+.tagIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+.tagText {
+  font-family: 'Quicksand', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #262E34;
+}
+
+.description {
+  margin: 0;
+  color: #fff;
+  font-family: 'Quicksand';
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 125%;
+  letter-spacing: 0%;
+  font-size: clamp(16px, 1.6vw, 20px);
+  white-space: pre-line;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Quicksand';
+  font-weight: 400;
+  font-style: 'Regular';
+  line-height: 125%;
+  letter-spacing: 0%;
+  font-size: clamp(14px, 1.6vw, 20px);
+}
+
+.btnPrimary {
+  background: #266AD9;
+  color: #fff;
+  border: 0;
+}
+
+.btnPrimary:hover {
+  background: #5696FF;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btnSecondary:hover {
+  background: #FFFFFF29;
+}
+
+/* Viewport switches */
+.desktopOnly {
+  display: block;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+
+
+/* ===== Mobile card overrides, reuse same class names ===== */
+@media (max-width:768px) {
+  .section {
+    background: #266AD9;
+    color: #fff;
+    padding: 0 6vw;
+  }
+
+  .visuallyHidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block;
+
+  }
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 72px 0;
+    gap: 64px;
+    padding-bottom: 0;
+  }
+
+  /* TITLE */
+  .title {
+    width: 100%;
+    margin: 0;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  .mobileStack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mobileGroup {
+    display: grid;
+    gap: 12px;
+  }
+
+
+
+  .mobileHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 29px;
+    color: #ffffff;
+    font-family: Quicksand;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 36px;
+    line-height: 120%;
+  }
+
+  .mobileNum {
+    min-width: 28px;
+    text-align: right;
+    color: #ffffff;
+    opacity: .9;
+    font-family: Quicksand;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    padding-left: 20px;
+
+  }
+
+  .mobileGroup::after {
+    content: "";
+    display: block;
+    height: 60px;
+    background: #262E34;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+
+  }
+
+  /* omit the bar after the last item; remove if you want it */
+  .mobileGroup:last-child::after {
+    display: none;
+  }
+
+  /* remove chrome on mobile cards */
+  [data-variant="mobile"] {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  /* mobile flow: tags -> image -> text -> buttons */
+  [data-variant="mobile"] .cardBody {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  /* title hidden on mobile (semantics kept) */
+  [data-variant="mobile"] .cardTitle {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
+
+  /* tags style */
+  [data-variant="mobile"] .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  [data-variant="mobile"] .tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #FFFFFF33;
+    border-radius: 10px;
+    padding: 6px 8px;
+  }
+
+  [data-variant="mobile"] .tagIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+  }
+
+  [data-variant="mobile"] .tagText {
+    font-family: 'Quicksand';
+    font-weight: 600;
+    font-style: 'SemiBold';
+    font-size: 14px;
+    line-height: 94%;
+    letter-spacing: 0%;
+
+    color: #ffffff;
+  }
+
+  /* image */
+  [data-variant="mobile"] .imageWrap {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  [data-variant="mobile"] .image {
+    border-radius: 30px;
+    width: 321px;
+    height: 217px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* text */
+  [data-variant="mobile"] .description {
+    margin: 0;
+    color: #fff;
+    font-family: 'Quicksand';
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    width: 335px;
+  }
+
+  /* buttons left-aligned */
+  [data-variant="mobile"] .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  [data-variant="mobile"] .btnPrimary,
+  .btnSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 120%;
+
+
+  }
+
+  [data-variant="mobile"] .btnPrimary {
+    background: #ffffff;
+    color: #266AD9;
+    border: 0;
+  }
+
+  .btnPrimary:hover {
+    background: #FFFFFFD9;
+  }
+
+  [data-variant="mobile"] .btnSecondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+
+  .btnSecondary:hover {
+    background: #5696FF;
+  }
+
+  .arrowBox {
+    display: none;
+  }
+
+  .seeMore {
+    display: inline-flex;
+    align-self: center;
+    padding: 14px 20px;
+    border-radius: 30px;
+    background: #266AD9;
+    color: #ffffff;
+    border: 0;
+    text-decoration: none;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 120%;
+    cursor: pointer;
+    width: fit-content;
+    height: auto;
+  }
+
+  .seeMore:hover {
+    background: #5696FF;
+  }
+
+  .mobileCta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    background: #262E34;
+    margin-inline: calc(50% - 50vw);
+    margin-block: calc(-1 * 36px);
+    padding: 24px;
+  }
+
+  .mobileCtaText {
+    margin: 0 0 10px;
+    align-self: left;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #fff;
+    display: none;
+  }
+
+  .mobileCta:has(.seeMore[aria-expanded="true"]) .mobileCtaText {
+    display: none;
+  }
+
+}

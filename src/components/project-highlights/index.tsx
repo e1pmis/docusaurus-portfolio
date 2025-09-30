@@ -1,0 +1,306 @@
+import React, { JSX, useMemo, useState } from 'react';
+import styles from './project-highlights.module.css';
+
+interface Tag {
+  icon: string;
+  label: string;
+}
+
+interface Project {
+  id: string;
+  name: string;
+  image: string;
+  tags: Tag[];
+  description: string;
+  docUrl?: string;
+  githubUrl?: string;
+}
+
+interface ProjectCardProps {
+  project: Project;
+  variant: 'desktop' | 'mobile';
+}
+
+const PROJECTS: Project[] = [
+  {
+    id: 'conduit',
+    name: 'Conduit Container',
+    image: './img/projects/conduit.png',
+    tags: [
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/docker_b.svg', label: 'Docker' },
+      { icon: './icons/githubactions_b.svg', label: 'CI/CD' },
+    ],
+    description:
+      `Conduit Container is my approach to deploying full-stack applications securely and consistently.\n
+      Both frontend and backend run as Docker services, managed by a  CI/CD pipeline that handles builds, releases, and deployments.\n
+      The outcome is fewer manual steps, reduced errors, and faster delivery, reflecting my DevSecOps approach of combining automation with stability.`,
+    docUrl: 'docs/conduit-container',
+    githubUrl: 'https://github.com/e1pmiS/conduit-container',
+  },
+  {
+    id: 'juice',
+    name: 'OWASP Juice Shop',
+    image: './img/projects/juiceshop.png',
+    tags: [
+      { icon: './icons/security.svg', label: 'IT Security' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/python.svg', label: 'Python' },
+    ],
+    description:
+      `Juice Shop Meister is a security project where I documented and demonstrated vulnerabilities in OWASP Juice Shop.\n
+      I paired technical write-ups with video walkthroughs to explain how exploits work and why they matter.\n
+      Each exercise strengthened my ability to think like both attacker and defender while communicating risk clearly, turning complex exploits into accessible knowledge.`,
+    docUrl: 'docs/owasp-juice-shop',
+    githubUrl: 'https://github.com/e1pmiS/Juice_Shop_Meister',
+  },
+  {
+    id: 'minecraft',
+    name: 'Minecraft Server',
+    image: './img/projects/minecraft.png',
+    tags: [
+      { icon: './icons/docker_b.svg', label: 'Docker' },
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/security.svg', label: 'IT Security' },
+    ],
+    description:
+      `The Minecraft Server project delivers a lightweight Docker Compose setup for hosting a game server with persistence for world data, configuration, and logs.\n
+      This ensures the server can restart or update without data loss, while core settings are managed through environment variables, and upgrades could applied by swapping the server JAR.\n
+      The project reflects my focus on building practical, maintainable solutions through clean containerization practices.`,
+    docUrl: 'docs/minecraft-server',
+    githubUrl: 'https://github.com/e1pmiS/minecraft-server',
+  },
+  {
+    id: 'wordpress',
+    name: 'Word-Press',
+    image: './img/projects/wordpress.png',
+    tags: [
+      { icon: './icons/docker_b.svg', label: 'Docker' },
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/security.svg', label: 'IT Security' },
+    ],
+    description:
+      `A streamlined Docker Compose setup for Word-Press and MySQL using official images.\n 
+      Persistent volumes keep data safe across restarts, and env-based configuration keeps secrets out of source control, while Word-Press spins up after the database is ready, ensuring reliable startup.\n
+      This project was my way of turning a heavy CMS and database setup into a clean, stable, production-ready stack.`,
+    docUrl: 'docs/Word-press',
+    githubUrl: 'https://github.com/e1pmiS/WordPress-Docker-Project',
+  },
+  {
+    id: 'trucks',
+    name: 'Truck Signs API',
+    image: './img/projects/trucksigns.png',
+    tags: [
+      { icon: './icons/docker_b.svg', label: 'Docker' },
+      { icon: './icons/yaml_b.svg', label: 'Yaml' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/python.svg', label: 'Python' },
+    ],
+    description:
+      `A Django-based e-commerce backend containerized with Docker and PostgreSQL.\n
+      Services communicate over a dedicated Docker network, with configs and secrets managed through .env files. Includes superuser creation and product management via Django’s admin, making it usable from the start.\n
+      This project showed me how clean containerization and secure configs can turn backend deployments into something practical and dependable.`,
+    docUrl: 'docs/truck-signs-api',
+    githubUrl: 'https://github.com/e1pmiS/truck_signs_api',
+  },
+  {
+    id: 'babytools',
+    name: 'Baby Tools Shop',
+    image: './img/projects/babytools.png',
+    tags: [
+      { icon: './icons/docker_b.svg', label: 'Docker' },
+      { icon: './icons/shell_b.svg', label: 'Shell' },
+      { icon: './icons/python.svg', label: 'Python' },
+    ],
+    description:
+      `A Django-based shop packaged into a containerized service with a custom Dockerfile to control the Python environment and dependencies.\n
+      The setup can be launched, managed, and updated without breaking consistency, making it easy to run in different environments.\n
+      This project gave me hands-on experience with how containerization can turn web apps into consistent, production-ready services.`,
+    docUrl: 'docs/baby-tools-shop',
+    githubUrl: 'https://github.com/e1pmiS/baby-tools-shop',
+  },
+];
+
+
+function ProjectCard({ project, variant }: ProjectCardProps) {
+  if (variant === 'desktop') {
+    return (
+      <article className={styles.card} data-variant="desktop">
+        <div className={styles.cardBody}>
+          <div className={styles.leftCol}>
+            <h3 className={styles.cardTitle}>{project.name}</h3>
+            <div className={styles.imageWrap}>
+              <img src={project.image} alt={project.name} className={styles.image} />
+            </div>
+          </div>
+          <div className={styles.detailCol}>
+            <div className={styles.tags}>
+              {project.tags.map((tag) => (
+                <span key={tag.label} className={styles.tag}>
+                  <img src={tag.icon} alt="" className={styles.tagIcon} />
+                  <span className={styles.tagText}>{tag.label}</span>
+                </span>
+              ))}
+            </div>
+            <p className={styles.description}>{project.description}</p>
+            <div className={styles.buttons}>
+              {project.docUrl && (
+                <a className={styles.btnPrimary} href={project.docUrl} target="_blank" rel="noreferrer">
+                  Documentation
+                </a>
+              )}
+              {project.githubUrl && (
+                <a className={styles.btnSecondary} href={project.githubUrl} target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  // mobile
+  return (
+    <article className={styles.card} data-variant="mobile">
+      {/* keep semantic heading but hide visually */}
+      <h3 className={styles.visuallyHidden}>{project.name}</h3>
+      <div className={styles.cardBody}>
+        {/* tags -> image -> text -> buttons */}
+        <div className={styles.tags}>
+          {project.tags.map((tag) => (
+            <span key={tag.label} className={styles.tag}>
+              <img src={tag.icon} alt="" className={styles.tagIcon} />
+              <span className={styles.tagText}>{tag.label}</span>
+            </span>
+          ))}
+        </div>
+        <div className={styles.imageWrap}>
+          <img src={project.image} alt={project.name} className={styles.image} />
+        </div>
+        <p className={styles.description}>{project.description}</p>
+        <div className={styles.buttons}>
+          {project.docUrl && (
+            <a className={styles.btnPrimary} href={project.docUrl} target="_blank" rel="noreferrer">
+              Documentation
+            </a>
+          )}
+          {project.githubUrl && (
+            <a className={styles.btnSecondary} href={project.githubUrl} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+export default function ProjectHighlights(): JSX.Element {
+  const [IsExpanded, setIsExpanded] = useState(false);
+  const [IsActiveId, setIsActiveId] = useState(PROJECTS[0]?.id);
+  const active = useMemo(
+    () => PROJECTS.find((p) => p.id === IsActiveId) ?? PROJECTS[0],
+    [IsActiveId]
+  );
+
+  const desktopVisible = useMemo(
+    () => (IsExpanded ? PROJECTS : PROJECTS.slice(0, 6)),
+    [IsExpanded]
+  );
+  const mobileVisible = useMemo(
+    () => (IsExpanded ? PROJECTS : PROJECTS.slice(0, 3)),
+    [IsExpanded]
+  );
+
+  const listId = 'project-list';
+
+  return (
+    <section id="project-highlights" className={styles.section}>
+      <div className={styles.wrap}>
+        <h2 className={styles.title}>My project highlights</h2>
+
+        {/* Desktop layout */}
+        <div className={styles.desktopOnly}>
+          <div className={styles.content}>
+            <aside className={styles.listCol}>
+              <div id={listId} className={styles.list}>
+                {desktopVisible.map((project) => {
+                  const idx = PROJECTS.indexOf(project) + 1;
+                  const isActive = project.id === IsActiveId;
+                  return (
+                    <button
+                      key={project.id}
+                      type="button"
+                      className={`${styles.item} ${isActive ? styles.itemActive : ''}`}
+                      onClick={() => setIsActiveId(project.id)}
+                      aria-pressed={isActive}
+                    >
+                      <span className={`${styles.num} ${isActive ? styles.numActive : ''}`}>{idx}.</span>
+                      <span className={styles.itemLabel}>{project.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* {PROJECTS.length > 5 && (
+                <button
+                  type="button"
+                  className={styles.seeMore}
+                  onClick={() => setExpanded((v) => !v)}
+                  aria-expanded={expanded}
+                  aria-controls={listId}
+                >
+                  <span className={styles.arrowBox} aria-hidden="true">
+                    <img src="./icons/arrow_d.svg" alt="" className={styles.arrowImg} />
+                  </span>
+                  <span>{expanded ? 'See fewer projects' : 'See more projects'}</span>
+                </button>
+              )} */}
+            </aside>
+
+            <ProjectCard project={active} variant="desktop" />
+          </div>
+        </div>
+
+        {/* Mobile layout */}
+        <div className={styles.mobileOnly}>
+          <div className={styles.content}>
+            <div className={styles.mobileStack}>
+              {mobileVisible.map((project) => {
+                const idx = PROJECTS.indexOf(project) + 1;
+                return (
+                  <div key={project.id} className={styles.mobileGroup}>
+                    <div className={styles.mobileHeader}>
+                      <span className={styles.mobileNum}>{idx}.</span>
+                      <span className={styles.itemLabel}>{project.name}</span>
+                    </div>
+                    <ProjectCard project={project} variant="mobile" />
+                  </div>
+                );
+              })}
+
+              {PROJECTS.length > 3 && (
+                <div className={styles.mobileCta}>
+                  <p className={styles.mobileCtaText}>Explore more projects</p>
+                  <button
+                    type="button"
+                    className={styles.seeMore}
+                    onClick={() => setIsExpanded((v) => !v)}
+                    aria-expanded={IsExpanded}
+                  >
+                    <span>{IsExpanded ? 'See fewer projects' : 'See more projects'}</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
